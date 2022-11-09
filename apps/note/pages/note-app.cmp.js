@@ -11,8 +11,10 @@ export default {
     <section class="note-app-page">
             <!-- <note-filter @filter="setFilter"/> -->
         <note-list 
+
         @remove="removeNote"
         @pin="pinNote"
+        @changeColor="changeColor"
         :notes="notesToShow"/>
     </section>
     `,
@@ -49,7 +51,16 @@ export default {
             .then(() => {
                 const idx = this.notes.findIndex(note => note.id === noteId)
                 this.notes[idx].isPinned=!this.notes[idx].isPinned
-                noteService.save(noteId)
+                noteService.save(this.notes[idx])
+            })
+        },
+        changeColor(noteId,backgroundColor){
+            noteService.get(noteId)
+            .then(() => {
+                const idx = this.notes.findIndex(note => note.id === noteId)
+                this.notes[idx].style.backgroundColor=backgroundColor
+                console.log(`this.notes = `, this.notes)
+                noteService.save(this.notes[idx])
             })
         }
         },
