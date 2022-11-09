@@ -1,21 +1,23 @@
 .navbar-section{
-    width: 20%;
-    height: 78vh;
+    width: 17%;
+    margin-top: 10vh;
+    height: 88vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     position: relative;
-    bottom: 100px;
+    bottom: 200px;
+    box-shadow: 3px 0px 47px -17px rgba(0,0,0,0.46);
 }
 
 .navbar-section .new-email-btn{
     position: relative;
-    bottom: 70px;
+    bottom: 40px;
     background-color: #C2E7FF;
     border: none;
-    width: 120px;
-    height: 60px;
+    width: 50%;
+    height: 10%;
     border-radius: 10px;
 
     transition: 0.3s;
@@ -23,6 +25,7 @@
 
 .navbar-section .new-email-btn:hover{
     scale: 1.1;
+    box-shadow: 10px 13px 47px -34px rgba(0,0,0,1);
 }
 
 .navbar-section .income{
@@ -31,6 +34,9 @@
     text-align: center;
     border-radius: 20px;
     transition: 0.3s;
+    background-color: inherit;
+    border: none;
+    font-size: 1.1rem;
 }
 
 .navbar-section .income:hover{
