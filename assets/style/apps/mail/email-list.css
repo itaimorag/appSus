@@ -1,7 +1,12 @@
+.email-list{
+    overflow-y: scroll;
+    height: 80%;
+}
 .email-list li{
     list-style-type: none;
-    height: 80%;
+
     width: 100%;
+    cursor: pointer;
 }
 
 .email-list ul{

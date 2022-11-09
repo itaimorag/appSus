@@ -1,0 +1,47 @@
+.details-section{
+    padding: 30px;
+   border-bottom:  0.8px solid #b0aeae;
+   color: #181818;
+
+}
+
+.details-section >*{
+    margin: 10px;
+}
+
+.details-section .subject{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+
+.details-section .body{
+    margin-bottom: 20px;
+}
+
+.details-section .from{
+    width: 100%;
+    text-align: right;
+}
+
+.details-section h1{
+    color: #181818;
+}
+
+.details-section button{
+    background-color: inherit;
+    border: none;
+    margin-inline: 3px;
+    width: fit-content;
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+
+.details-section button:hover{
+background-color: #e6e6e6;
+scale: 1.1;
+}
+    
