@@ -69,7 +69,11 @@ function _createNotes() {
                 isPinned: true,
                 info: {
                     txt: "Fullstack Me Baby!"
+                },
+                style: {
+                    backgroundColor: "#f16a81"
                 }
+
             },
             {
                 id: "n102",
@@ -80,7 +84,7 @@ function _createNotes() {
                     title: "Bobi and Me"
                 },
                 style: {
-                    backgroundColor: "#00d"
+                    backgroundColor: "#f16a81"
                 }
             },
             {
@@ -95,11 +99,11 @@ function _createNotes() {
                     ]
                 },
                 style: {
-                    backgroundColor: "#00d"
+                    backgroundColor: "#f16a81"
                 }
             },
             {
-                id: "n103",
+                id: "n104",
                 type: "note-todos",
                 isPinned: false,
                 info: {
@@ -112,7 +116,7 @@ function _createNotes() {
                     ]
                 },
                 style: {
-                    backgroundColor: "#00d"
+                    backgroundColor: "#f16a81"
                 }
             },
             
