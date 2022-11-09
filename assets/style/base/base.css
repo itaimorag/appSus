@@ -52,3 +52,17 @@ button {
   outline: 1px solid red
 }
 
+.flex-col{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+}
+
+#app{
+  display: flex;
+  flex-direction: column;
+}
+.flex{
+  display: flex;
+}

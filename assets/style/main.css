@@ -21,6 +21,10 @@
 
 /* Email-cmps */
 @import 'apps/mail/email-preview.css';
+@import 'apps/mail/email-list.css';
+@import 'apps/mail/email-filter.css';
+@import 'apps/mail/email-navbar.css';
+
 
 
 /* Note-cmps */

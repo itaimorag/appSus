@@ -56,11 +56,39 @@ function _createEmails() {
         emails = 
         [
             {
-                id: 'e101',
+                id: utilService.makeId(),
+                subject: 'hi you!',
+                body: 'We would like to give you a chance',
+                isRead: true,
+                sentAt: 1551133930594,
+                from: 'buki-nae@momo.com',
+                to: 'user@appsus.com'
+
+            },
+            {
+                id: utilService.makeId(),
+                subject: 'Where have you been?',
+                body: 'Ive been looking for you, where are you??',
+                isRead: false,
+                sentAt: 1670111035 ,
+                from: 'yuliaBeker321@momo.com',
+                to: 'user@appsus.com'
+
+            },            {
+                id: utilService.makeId(),
+                subject: 'We havent seen you recently!',
+                body: 'Log in and show us that youre active😀',
+                isRead: false,
+                sentAt: 1197652430 ,
+                from: 'facebook@momo.com',
+                to: 'user@appsus.com'
+
+            },            {
+                id: utilService.makeId(),
                 subject: 'Miss you!',
                 body: 'Would love to catch up sometimes',
                 isRead: false,
-                sentAt: 1551133930594,
+                sentAt: 1659907863 ,
                 from: 'momo@momo.com',
                 to: 'user@appsus.com'
 
