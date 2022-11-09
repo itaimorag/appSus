@@ -1,20 +1,18 @@
-import { utilService } from '../../../services/util.service'
-import { storageService } from '../../../services/async-storage.service'
+import { utilService } from '../../../services/util.service.js'
+import { storageService } from '../../../services/async-storage.service.js'
 
 const EMAIL_KEY = 'emailDB'
 _createEmails()
 
-export const booksService = {
+export const emailService = {
     query,
     remove,
     save,
     get,
     getEmptyEmail,
-    putReview,
     getNextEmailId,
 }
 
-_createEmails()
 
 
 function getNextEmailId(emailId) {
@@ -40,14 +38,6 @@ function remove(emailId) {
     return storageService.remove(EMAIL_KEY, emailId)
 }
 
-function putReview(review, emailId) {
-    return get(emailId).then(email => {
-        if (!email.reviews) email.reviews = []
-        email.reviews.push(review)
-        return storageService.put(EMAIL_KEY, email)
-    })
-}
-
 function save(email) {
     console.log(email);
     if (email.id) return storageService.put(EMAIL_KEY, email)
@@ -62,7 +52,9 @@ function getEmptyEmail() {
 function _createEmails() {
     let emails = utilService.loadFromStorage(EMAIL_KEY)
     if (!emails || !emails.length) {
-        emails = [
+        console.log('hi');
+        emails = 
+        [
             {
                 id: 'e101',
                 subject: 'Miss you!',
