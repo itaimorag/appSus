@@ -7,11 +7,7 @@ export default {
     `,
     data(){
         return { 
-            cars: [],
-            filterBy: {
-                vendor : '',
-                minSpeed: 0
-            },
+        
         }
     },
     created(){
