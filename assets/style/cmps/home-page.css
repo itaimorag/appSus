@@ -6,8 +6,15 @@
     flex-direction: column;
 }
 
+.home-page .app{
+    padding: 20px;
+}
+
 .apps-container{
     width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .debug{
