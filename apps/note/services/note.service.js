@@ -1,60 +1,110 @@
-export const surveyService = {
-    getById
+import { utilService } from '../../../services/util.service'
+import { storageService } from '../../../services/async-storage.service'
+
+const NOTE_KEY = 'noteDB'
+_createNotes()
+
+export const booksService = {
+    query,
+    remove,
+    save,
+    get,
+    getEmptyNote,
+    putReview,
+    getNextNoteId,
 }
 
-function getById() {
-    return Promise.resolve(survey)
+_createNotes()
+
+
+function getNextNoteId(noteId) {
+    return storageService.query(NOTE_KEY)
+        .then(notes => {
+            var idx = notes.findIndex(note => note.id === noteId)
+            return {
+                nextId: (idx === notes.length - 1) ? notes[0].id : notes[idx + 1].id,
+                prevId: (idx === 0) ? notes[notes.length - 1].id : notes[idx - 1].id
+            }
+        })
 }
 
-var survey =
-{
-  
-    cmps: [
-        {
-            type: 'textBox',
-            info: {
-                label: 'Your full name:'
-            }
-        },
-        {
-            type: 'textBox',
-            info: {
-                label: 'Robot Type:',
-                opts: ['CleanDude', 'FeedMeBob', 'misterPleasure']
-            }
-        },
-        {
-            type: 'textBox',
-            info: {
-                label: 'Human Type:',
-                opts: ['Muki', 'Puki']
-            }
-        },
-        {
-            type: 'selectBox',
-            info: {
-                label: 'How was it:',
-                opts: ['Great', 'Fine', 'Crap', 'Worst Ever']
-            }
-        },
-
-        {
-            type: 'linearScale',
-            info: {
-                label: 'Quality:',
-                max: 5
-            }
-        },
-        {
-            type: 'photoTuner',
-            info: {
-                label: 'Tune your photo:',
-                // imgUrl: 'https://res.cloudinary.com/daahi2yaz/image/upload/v1557175588/Robots/Crypto-robots.jpg'
-                // imgUrl: 'https://res.cloudinary.com/daahi2yaz/image/upload/v1547889015/Robots/spotmini-975475584.jpg'
-                imgUrl: 'https://res.cloudinary.com/daahi2yaz/image/upload/v1555521791/Robots/maxresdefault.jpg'
-                // imgUrl: 'https://res.cloudinary.com/demo/image/upload/lady.jpg'
-            }
-        },
-
-    ]
+function get(noteId) {
+    return storageService.get(NOTE_KEY, noteId)
 }
+
+function query() {
+    return storageService.query(NOTE_KEY)
+}
+
+function remove(noteId) {
+    return storageService.remove(NOTE_KEY, noteId)
+}
+
+function putReview(review, noteId) {
+    return get(noteId).then(note => {
+        if (!note.reviews) note.reviews = []
+        note.reviews.push(review)
+        return storageService.put(NOTE_KEY, note)
+    })
+}
+
+function save(note) {
+    console.log(note);
+    if (note.id) return storageService.put(NOTE_KEY, note)
+    else return storageService.post(NOTE_KEY, note)
+}
+
+
+function getEmptyNote() {
+    return { id: '', title: '' }
+}
+
+function _createNotes() {
+    let notes = utilService.loadFromStorage(NOTE_KEY)
+    if (!notes || !notes.length) {
+        notes = [
+            {
+                id: "n101",
+                type: "note-txt",
+                isPinned: true,
+                info: {
+                    txt: "Fullstack Me Baby!"
+                }
+            },
+            {
+                id: "n102",
+                type: "note-img",
+                isPinned: false,
+                info: {
+                    url: "http://some-img/me",
+                    title: "Bobi and Me"
+                },
+                style: {
+                    backgroundColor: "#00d"
+                }
+            },
+            {
+                id: "n103",
+                type: "note-todos",
+                isPinned: false,
+                info: {
+                    label: "Get my stuff together",
+                    todos: [
+                        { txt: "Driving liscence", doneAt: null },
+                        { txt: "Coding power", doneAt: 187111111 }
+                    ]
+                },
+                style: {
+                    backgroundColor: "#00d"
+                }
+            }
+        ]
+        utilService.saveToStorage(NOTE_KEY, notes)
+
+    }
+
+    return notes
+}
+
+
+
