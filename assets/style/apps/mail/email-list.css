@@ -1,7 +1,11 @@
 .email-list li{
     list-style-type: none;
     height: 80%;
-    width: 88%;
+    width: 100%;
+}
+
+.email-list ul{
+    border-top: 1px solid #b0aeae;
 }
 
 .email-list ul{

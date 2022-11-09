@@ -5,11 +5,12 @@ export default{
             <p class="bolded">{{substringSender}}</p>
         <p class="bold">{{ email.subject }}</p>
         <p>{{ email.body}}</p>
-        <p>{{formattedSeenAt}}</p>
+        <p >{{formattedSeenAt}}</p>
     </section>
     `,
     data(){
         return {
+            
         }
     },
     computed:{

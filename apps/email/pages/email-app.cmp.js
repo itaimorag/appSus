@@ -8,7 +8,7 @@ export default {
     template: `
     <div className="flex">
         <email-navbar />
-        <div className="flex-col debug" >
+        <div className="flex-col" >
             <email-filter></email-filter>
             <email-list :emails="emails"></email-list>
         </div>

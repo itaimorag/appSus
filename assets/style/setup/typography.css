@@ -1,4 +1,8 @@
 
+@font-face {
+    font-family: fa;
+    src: url('../../fonts/fa/fa-solid-900.ttf');
+}
 
 @font-face {
     font-family: koblenz;
@@ -8,4 +12,12 @@
 @font-face {
     font-family: associate;
     src: url('../../fonts/associate/AssociateSansRegular.otf');
+}
+
+.fa{
+    font-family: fa;
+}
+
+.fa.font-awesome-icon::after{
+    content: "\f002";
 }

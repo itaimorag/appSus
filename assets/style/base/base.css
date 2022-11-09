@@ -27,6 +27,7 @@ p {
 a {
   text-decoration: none;
   color: unset;
+  font-family: 'koblenz'
 }
 
 
@@ -45,6 +46,7 @@ button {
   min-width: 48px;
   min-height: 48px;
   cursor: pointer;
+  font-family: 'koblenz'
 }
 
 /* Simple and useful CSS Debugging Technique */

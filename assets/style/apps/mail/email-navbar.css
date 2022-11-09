@@ -5,6 +5,24 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
+    bottom: 100px;
+}
+
+.navbar-section .new-email-btn{
+    position: relative;
+    bottom: 70px;
+    background-color: #C2E7FF;
+    border: none;
+    width: 120px;
+    height: 60px;
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.navbar-section .new-email-btn:hover{
+    scale: 1.1;
 }
 
 .navbar-section .income{
@@ -12,4 +30,12 @@
     min-width: 100px;
     text-align: center;
     border-radius: 20px;
+    transition: 0.3s;
+}
+
+.navbar-section .income:hover{
+    scale: 1.1;
+    background-color: rgb(239, 239, 239);
+    font-weight: bolder;
+    color: #282828;
 }
