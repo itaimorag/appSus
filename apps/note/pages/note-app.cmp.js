@@ -72,30 +72,11 @@ export default {
     computed: {
         notesToShow() {
             if (!this.filterBy) return this.notes
-            // const { text } = this.filterBy
-            console.log(`this.filterBy.text = `, this.filterBy.text)
             const regex = new RegExp(this.filterBy.text, 'i')
-            return this.notes.filter(note =>{
-                console.log(`thisf = `, note.info)
+            return this.notes.filter(note =>{   
               if(note.type==='note-txt') return regex.test(note.info.txt)
               else if(note.type==='note-todos') return regex.test(note.info.label)
-              else return regex.test(note.info.title)
-           
-                return (((note.type==='note-txt')&&(regex.test(note.info.text)))||
-                ((note.type==='note-img')&&(regex.test(note.info.title)))||
-                ((note.type==='note-todos')&&(regex.test(note.info.label)))||
-                ((note.type==='note-video')&&(regex.test(note.info.title))))
-                // switch (note.type) {
-                    //     case 'note-txt':
-                    //         return regex.test(note.info.txt)
-                    //     case 'note-img':
-                    //         return regex.test(note.info.title)
-                    //     case 'note-todos':
-                    //         return regex.test(note.info.label)
-                    //     case 'note-video':
-                    //         return regex.test(note.info.title)
-                    // }
-                    
+              else return regex.test(note.info.title)                   
                 })
        
         },
