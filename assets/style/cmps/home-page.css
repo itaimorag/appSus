@@ -3,4 +3,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.apps-container{
+    width: 40%;
+}
+
+.debug{
+    outline: 1px solid red;
+}
+
+.book-app{
+    width: 100px;
+    height: 100px;
+}
+
+.email-app{
+    width: 100px;
+    height: 100px;
+}
+
+.note-app{
+    width: 100px;
+    height: 100px;
 }

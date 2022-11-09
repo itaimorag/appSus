@@ -1,9 +1,9 @@
 import homePage from './views/app-home.cmp.js'
 import aboutPage from './views/app-about.cmp.js'
 
-import emailAppPage from './views/apps/email-app.cmp.js'
-import keepAppPage from './views/apps/keep-app.cmp.js'
-import bookAppPage from './views/apps/book-app.cmp.js'
+import emailAppPage from './apps/email/pages/email-app.cmp.js'
+import noteAppPage from './apps/note/pages/note-app.cmp.js'
+import bookAppPage from './apps/book/pages/book-app.cmp.js'
 
 
 
@@ -22,8 +22,8 @@ const routerOptions = {
 			component: aboutPage,
 		},
 		{
-			path: '/keepApp',
-			component: keepAppPage,
+			path: '/noteApp',
+			component: noteAppPage,
 		},
 		{
 			path: '/emailApp',
