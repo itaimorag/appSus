@@ -12,7 +12,6 @@ export default{
             return {
                 filterBy: {
                     title: '',
-                    price: 200,
                 }
             }
         },
