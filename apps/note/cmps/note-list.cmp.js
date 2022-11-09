@@ -1,4 +1,5 @@
-import notePreview from './note-preview.cmp.js'
+import notePreviewPinned from './note-preview-pinned.cmp.js'
+import notePreviewNotpinned from './note-preview-notPinned.cmp.js'
 
 
 
@@ -9,9 +10,10 @@ export default {
         <section class="note-list">
             <ul class="notes-list-ul">
                 <li v-for="note in notes" :key="note.id" class="note" :style="{backgroundColor:note.style.backgroundColor}">
-                    <note-preview :note="note"/>
+                    <note-preview-pinned :note="note"/>
+                    <note-preview-notPinned :note="note"/>
+
                     <section class="actions-note-item">
-                       
                         <button @click="remove(note.id)">x</button>
                         <button @click="pin(note.id)">🧷</button>
                         <label class="label-color-item">
@@ -21,6 +23,9 @@ export default {
                     </section>
                 </li>
             </ul>
+
+
+
         </section>
     `,
     data(){
@@ -41,6 +46,7 @@ export default {
         },
     },
     components: {
-        notePreview,
+        notePreviewPinned,
+        notePreviewNotpinned,
     }
 }
