@@ -25,7 +25,7 @@ export default {
     `,
     data(){
         return {
-            color: '',
+            color: '#f16a81',
 
         }
     },
