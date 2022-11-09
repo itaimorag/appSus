@@ -1,0 +1,17 @@
+.about-page{
+    min-height: 78vh;
+    background-image: url('../../img/about-page.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.about-page p{
+    margin-top: 20px;
+    width: 300px;
+}
