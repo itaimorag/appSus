@@ -6,19 +6,25 @@
     align-items: center;
     bottom:12.2vh;
     right: 5vh;
-    outline: 1px solid black;
     height: 55%;
     width: 35%;
-    border-radius: 10px;
+    border-radius: 30px;
     box-shadow: 1px -14px 47px -17px rgba(0,0,0,0.46);
 }
 
-.add-email button{
+button.line{
+    background-color:inherit;
+    /* border: none; */
+    
+}
+
+.add-email .close-btn{
     position: absolute;
     top: 0;
     right: 0;
     border: none;
-    background-color:inherit;
+    background-color: aliceblue;
+    border-radius: 30px;
 }
 
 .add-email .new-email{
@@ -42,9 +48,12 @@
 }
 
 .to input{
-    width: 90%;
+    width: 95%;
     border: none;
     outline: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: associate;
 }
 
 .add-email .subject{
@@ -54,10 +63,44 @@
     justify-content: center;
     width: 100%;
     border-bottom:  1px solid rgb(225, 233, 240);
+    padding-inline: 5px;
 }
 
 .subject input{
     width: 90%;
     border: none;
+    font-size: 14px;
     outline: none;
+    font-family: associate;
 }
+
+.add-email .content{
+    height: 55%;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content textarea{
+    resize: none;
+    height: 90%;
+    width: 100%;
+    margin: auto;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: rgb(107, 107, 107);
+    font-family: associate;
+}
+
+.add-email .buttons{
+    border-top: 1px solid rgb(225, 233, 240);
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
