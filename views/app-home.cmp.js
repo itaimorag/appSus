@@ -1,11 +1,11 @@
 export default {
-	template: `
+    template: `
         <section class="home-page">
             <h1>Welcome to AppSus</h1>
             <article className="apps-container debug">
-                <div className="book-app"></div>
-                <div className="email-app"></div>
-                <div className="note-app"></div>
+                <router-link class="app" to="/bookApp">book</router-link>
+                <router-link class="app" to="/noteApp">note</router-link>
+                <router-link class="app" to="/emailApp">email</router-link>
             </article>
         </section>
     `,
