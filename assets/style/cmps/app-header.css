@@ -1,4 +1,8 @@
 .app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
   background-color: var(--clr5);
   color: var(--secondary-clr1);
   padding: 1em;
@@ -10,3 +14,5 @@
     color: var(--secondary-clr2);
   }
 }
+
+
