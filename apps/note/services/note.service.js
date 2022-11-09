@@ -1,10 +1,10 @@
-import { utilService } from '../../../services/util.service'
-import { storageService } from '../../../services/async-storage.service'
+import { utilService } from '../../../services/util.service.js'
+import { storageService } from '../../../services/async-storage.service.js'
 
 const NOTE_KEY = 'noteDB'
 _createNotes()
 
-export const booksService = {
+export const noteService = {
     query,
     remove,
     save,
@@ -76,7 +76,7 @@ function _createNotes() {
                 type: "note-img",
                 isPinned: false,
                 info: {
-                    url: "http://some-img/me",
+                    url: "http://coding-academy.org/books-photos/20.jpg",
                     title: "Bobi and Me"
                 },
                 style: {
@@ -97,7 +97,25 @@ function _createNotes() {
                 style: {
                     backgroundColor: "#00d"
                 }
-            }
+            },
+            {
+                id: "n103",
+                type: "note-todos",
+                isPinned: false,
+                info: {
+                    label: "Get my stuff together",
+                    todos: [
+                        { txt: "Driving liscence", doneAt: null },
+                        { txt: "Coding power", doneAt: 187111111 },
+                        { txt: "Driving liscence", doneAt: null },
+                        { txt: "Driving liscence", doneAt: null }
+                    ]
+                },
+                style: {
+                    backgroundColor: "#00d"
+                }
+            },
+            
         ]
         utilService.saveToStorage(NOTE_KEY, notes)
 

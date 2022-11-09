@@ -20,7 +20,9 @@
 @import 'apps/note/note-app.css';
 
 /* Email-cmps */
-@import 'apps/mail/email-preview.css'
+@import 'apps/mail/email-preview.css';
 
 
 /* Note-cmps */
+
+@import 'apps/note/note-app.css'

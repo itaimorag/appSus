@@ -1,26 +1,37 @@
+import notePreview from './note-preview.cmp.js'
+
+
+
+
 export default {
-    props:['cars'],
+    props:['notes'],
     template: `
-        <section class="car-list">
-            <ul>
-                <li v-for="car in cars" :key="car.id">
-                    <car-preview :car="car"/>
-                    <section class="actions">
-                        <!-- <button @click="showDetails(car)">Details</button> -->
-                        <router-link :to="'/car/' + car.id">Details</router-link> |
-                        <router-link :to="'/car/edit/' + car.id">Edit</router-link> |
-                        <button @click="remove(car.id)">x</button>
+        <section class="note-list">
+            <ul class="notes-list-ul">
+                <li v-for="note in notes" :key="note.id" class="note">
+                    <note-preview :note="note"/>
+                    <section class="actions-note-item">
+                       
+                        <button @click="remove(note.id)">x</button>
+                        <button @click="pin(note.id)">🧷</button>
+                        <label class="label-color-item">
+                            <input type="color" class="input-color-item"/>
+                            
+                        </label>
                     </section>
                 </li>
             </ul>
         </section>
     `,
     methods: {
-        remove(carId){
-            this.$emit('remove', carId)
+        remove(noteId){
+            this.$emit('remove', noteId)
+        },
+        pin(noteId){
+            this.$emit('pin', noteId)
         },
     },
     components: {
-        carPreview,
+        notePreview,
     }
 }
