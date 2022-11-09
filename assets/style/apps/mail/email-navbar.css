@@ -1,0 +1,15 @@
+.navbar-section{
+    width: 20%;
+    height: 78vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.navbar-section .income{
+    padding: 10px;
+    min-width: 100px;
+    text-align: center;
+    border-radius: 20px;
+}

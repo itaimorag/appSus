@@ -1,15 +1,18 @@
 import { emailService } from '../services/email.service.js'
 
 import emailFilter from "../cmps/email-filter.cmp.js";
+import emailNavbar from '../cmps/email-navbar.cmp.js'
 import emailList from '../cmps/email-list.cmp.js'
 
 export default {
     template: `
-    <email-filter></email-filter>
-    <email-list :emails="emails"></email-list>
-    <section class="car-app">
-            <h1>hello</h1>
-    </section>
+    <div className="flex">
+        <email-navbar />
+        <div className="flex-col debug" >
+            <email-filter></email-filter>
+            <email-list :emails="emails"></email-list>
+        </div>
+    </div>
     `,
     data(){
         return { 
@@ -31,6 +34,9 @@ export default {
     },
     components: {
     emailFilter,
+    emailNavbar,
     emailList,
+
+    
     }
 }

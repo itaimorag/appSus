@@ -2,10 +2,10 @@ export default{
     props:['email'],
     template:`
     <section class="email-preview">
-        <h3>{{substringSender}}</h3>
-        <h4>{{ email.subject }}</h4>
+            <p class="bolded">{{substringSender}}</p>
+        <p class="bold">{{ email.subject }}</p>
         <p>{{ email.body}}</p>
-        <!-- <h2>{{email}}</h2> -->
+        <p>{{formattedSeenAt}}</p>
     </section>
     `,
     data(){
@@ -18,6 +18,14 @@ export default{
             let split = string.split("@");
             let value = split[0];
             return value
+        },
+        formattedSeenAt(){
+            let currDay = new Date().getDay()
+            let seen = this.email.sentAt
+            let datedFormat = new Date(seen)
+            if(datedFormat.getDay() !== currDay) return datedFormat.getDay() + '/' + (datedFormat.getMonth()+1)
+            else return datedFormat.getHours() + ":" + datedFormat.getMinutes()
+
         }
     }
     

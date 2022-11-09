@@ -1,0 +1,9 @@
+.email-list li{
+    list-style-type: none;
+    height: 80%;
+    width: 88%;
+}
+
+.email-list ul{
+    padding: 0;
+}
