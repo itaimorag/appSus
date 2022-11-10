@@ -4,7 +4,7 @@
   justify-content: space-between;
   height: 10vh;
   background-color: #2f2f2f;
-  color: var(--secondary-clr1);
+  color: #F2E29F;
   padding: 1em;
 }
 
@@ -23,11 +23,6 @@ border: none;
   width: 30px;
 }
 
-@media(max-width: 720px) {
-  .app-header {
-    background-color: var(--clr3);
-    color: var(--secondary-clr2);
-  }
-}
+
 
 

@@ -7,7 +7,7 @@ export default {
             </label>
             <div class="Keep-filter-icon">
                 <h2>Keep </h2>
-                <img src="../imgs/keep3.JPG" />
+                <img class="keep-filter-img" src="../imgs/keeps.png" />
             </div>
         </section>
     `,

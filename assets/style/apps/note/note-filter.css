@@ -11,8 +11,10 @@
     margin: 10px auto;
     padding: 5px 10px;
     background-color: rgba(128, 128, 128, 0.159);
-
 } 
+.keep-filter-img{
+    width: 30px;
+}
 
 .text-filter input{
     border: none;
