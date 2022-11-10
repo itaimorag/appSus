@@ -1,8 +1,9 @@
 import emailDetails from './email-details.cmp.js'
 import { emailService } from '../services/email.service.js'
+import { showSuccessMsg } from '../../../services/event-bus.service.js';
 
 export default {
-    emits:['replied'],
+    emits:['replied', 'removed'],
     props: ['email'],
     template: `
     <section @mouseleave="mouseOver(email, false)" @mouseover="mouseOver(email, true)" @click="emailSelect(email)" :class="checkIfRead(email)" class="email-preview">
@@ -15,6 +16,7 @@ export default {
         <div v-if="email.isHovered && !email.isRead"  @click.stop="changeIsRead(email, true)"><i class="fa fa-envelope-o"></i></div>
         <div v-if="email.isHovered && email.isRead"  @click.stop="changeIsRead(email, false)"><i class="fa fa-envelope-open-o"></i></div>
         <div v-if="email.isHovered" @click.stop="draftEmail(email, true)"><i class="fa fa-archive"></i></div>
+        <div v-if="email.isHovered" @click.stop="trashEmail(email)"><i class="fa fa-trash"></i></div>
         <p v-if="!email.isHovered">{{formattedSentAt}}</p>
     </section>
     <email-details @removed="removed" @replied="reply" :email="selectedEmail" v-if="isEmailOpen" />
@@ -36,6 +38,8 @@ export default {
         draftEmail(email, val) {
             email.isDraft = val
             emailService.save(email)
+            showSuccessMsg('Email sent to draft')
+            this.$emit('drafted', email.id)
         },
         emailSelect(email) {
             email.isRead = true
@@ -53,10 +57,26 @@ export default {
         starEmail(val) {
             this.email.isStared = val
             emailService.save(this.email)
+            showSuccessMsg('Email Stared')
         },
         removed(emaiId){
+            console.log(emaiId);
             this.$emit('removed', emaiId)
-        }
+        },
+        trashEmail(email) {
+            if (email.status !== 'trash') {
+                email.status = 'trash'
+                emailService.save(email)
+                this.$emit('removed', email.id)
+                showSuccessMsg('Email moved to trash')
+            }
+            else {
+                confirm('Are you sure you want to delete?')
+                emailService.remove(email.id)
+                this.$emit('removed', email.id)
+                showSuccessMsg('Email removed premanently')
+            }
+        },
     },
     computed: {
         substringSender() {

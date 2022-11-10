@@ -39,6 +39,6 @@ width: 42%;
     margin-inline-end: 20px;
 }
 
-.email-preview .fa-envelope-o, .fa-envelope-open-o{
-    margin: 5px;
+.email-preview .fa-envelope-o, .fa-envelope-open-o, .fa-trash{
+    margin: 8px;
 }

@@ -48,13 +48,13 @@ function query(criteria) {
                     return emails.filter(email => email.to === loggedinUser.email && email.status !== 'trash')
 
                 case 'sent':
-                    return emails.filter(email => email.from === loggedinUser.email)
+                    return emails.filter(email => email.from === loggedinUser.email && email.status !== 'trash')
 
                 case 'trash':
                     return emails.filter(email => email.status === 'trash')
 
                 case 'draft':
-                    return emails.filter(email => email.isDraft === true)
+                    return emails.filter(email => email.isDraft === true && email.status !== 'trash')
 
 
             }

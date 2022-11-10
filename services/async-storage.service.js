@@ -6,7 +6,7 @@ export const storageService = {
     remove,
 }
 
-function query(entityType, delay = 500) {
+function query(entityType, delay = 100) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
     return new Promise(resolve => setTimeout(() => resolve(entities), delay))
 }
@@ -39,18 +39,21 @@ function put(entityType, updatedEntity) {
 
 function remove(entityType, entityId) {
     return query(entityType).then(entities => {
-        // console.log(entities);
+        console.log(entities);
         const idx = entities.findIndex(entity => entity.id === entityId)
         if (idx < 0) throw new Error(`Unknown Entity ${entityId}`)
         entities.splice(idx, 1)
-        // console.log('success');
-        // console.log(entities);
+        console.log('success');
+        console.log(entities);
+        console.log(idx);
         save(entityType, entities)
     })
 }
 
 function save(entityType, entities) {
+    console.log(entities);
     localStorage.setItem(entityType, JSON.stringify(entities))
+    console.log(entities);
 }
 // Private functions
 

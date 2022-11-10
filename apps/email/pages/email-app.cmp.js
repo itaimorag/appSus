@@ -11,7 +11,7 @@ export default {
         <email-navbar @filter="filterCreteria" @newEmail="newEmailRender" />
         <div className="flex-col" >
             <email-filter @filter="setFilter" />
-            <email-list @removed="removed" @replied="reply" v-if="emails" :emails="emailsToShow" />
+            <email-list @drafted="drafted" @removed="removed" @replied="reply" v-if="emails" :emails="emailsToShow" />
         </div>
         <email-add :from="from" v-if="isNewEmail" @closeMsg="closeEmail"/>
     </div>
@@ -71,7 +71,11 @@ export default {
             console.log(emailId);
            const idx =  this.emails.findIndex(email => email.id === emailId)
            this.emails.splice(idx,1)
-        }
+        },
+      drafted(emailId){
+        const idx =  this.emails.findIndex(email => email.id === emailId)
+        this.emails.splice(idx,1)
+      }
     },
 
     computed: {
