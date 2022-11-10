@@ -8,7 +8,7 @@ export default {
 <section class="email-list">
     <ul>
         <li v-for="email in emails" :key="email.id">
-            <email-preview @Replied="reply" :email="email"></email-preview>
+            <email-preview @removed="removed" @Replied="reply" :email="email"></email-preview>
         </li>
     </ul>
 </section>
@@ -21,6 +21,9 @@ export default {
     methods: {
         reply(from){
             this.$emit('replied', from)
+        },
+        removed(emailId){
+            this.$emit('removed', emailId)
         }
     },
     components: {

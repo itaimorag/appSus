@@ -11,7 +11,7 @@ export default {
         <email-navbar @filter="filterCreteria" @newEmail="newEmailRender" />
         <div className="flex-col" >
             <email-filter @filter="setFilter" />
-            <email-list @replied="reply" v-if="emails" :emails="emailsToShow" />
+            <email-list @removed="removed" @replied="reply" v-if="emails" :emails="emailsToShow" />
         </div>
         <email-add :from="from" v-if="isNewEmail" @closeMsg="closeEmail"/>
     </div>
@@ -49,7 +49,6 @@ export default {
             console.log(from);
             this.isNewEmail = true;
             this.from = from
-            console.log(this.from);
         },
         closeEmail() {
             this.isNewEmail = false
@@ -57,18 +56,21 @@ export default {
         },
         filterCreteria(criteria) {
             this.criteria = criteria
-            console.log(this.criteria);
             emailService.query(this.criteria)
                 .then(emails => {
                     this.emails = emails
                 })
         },
         renderQuery() {
-            console.log(this.criteria);
             emailService.query(this.criteria)
                 .then(emails => {
                     this.emails = emails
                 })
+        },
+        removed(emailId){
+            console.log(emailId);
+           const idx =  this.emails.findIndex(email => email.id === emailId)
+           this.emails.splice(idx,1)
         }
     },
 

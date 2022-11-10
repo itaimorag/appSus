@@ -11,7 +11,7 @@ export default {
             <h2>{{email.subject}}</h2>
             <div className="btns">
                 <button @click="reply"><i class="fa fa-mail-reply" style="font-size:24px"></i></button>
-                <button @click="transferEmail(email)"><i class="fa fa-trash-o" style="font-size:28px"></i></button>
+                <button @click="trashEmail(email)"><i class="fa fa-trash-o" style="font-size:28px"></i></button>
             </div>
         </div>
         <div className="body">
@@ -23,7 +23,7 @@ export default {
     </section>
     `,
     methods: {
-        transferEmail(email) {
+        trashEmail(email) {
             if (email.status) {
                 emailService.remove(email.id)
                 .then(email=>{

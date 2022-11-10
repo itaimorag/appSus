@@ -28,7 +28,6 @@ export default {
         changeCriteria(key, val) {
             this.criteria = { [key]: val }
             this.$emit('filter', this.criteria)
-            console.log(this.criteria);
 
         }
 

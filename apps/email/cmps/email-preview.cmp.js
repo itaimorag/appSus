@@ -17,12 +17,13 @@ export default {
         <div v-if="email.isHovered" @click.stop="draftEmail(email, true)"><i class="fa fa-archive"></i></div>
         <p v-if="!email.isHovered">{{formattedSentAt}}</p>
     </section>
-    <email-details @removed="" @replied="reply" :email="selectedEmail" v-if="isEmailOpen" />
+    <email-details @removed="removed" @replied="reply" :email="selectedEmail" v-if="isEmailOpen" />
     `,
     data() {
         return {
             selectedEmail: null,
             isEmailOpen: false,
+
         }
     },
     methods: {
@@ -52,6 +53,9 @@ export default {
         starEmail(val) {
             this.email.isStared = val
             emailService.save(this.email)
+        },
+        removed(emaiId){
+            this.$emit('removed', emaiId)
         }
     },
     computed: {
