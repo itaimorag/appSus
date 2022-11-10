@@ -25,6 +25,10 @@ export default {
         transferEmail(email) {
             if (email.status) {
                 emailService.remove(email.id)
+                .then(email=>{
+                    this.$emit('removed', email.id)
+                })
+                
             }
             else email.status = 'trash'
             showSuccessMsg('Item removed')

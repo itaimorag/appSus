@@ -4,7 +4,7 @@
 }
 
 html {
-  
+  overflow: hidden;
 }
 
 body {
@@ -70,6 +70,11 @@ button {
 }
 
 .unread{
-  background-color: rgb(227, 227, 227);
+  background-color: #FFFFFF;
+  font-weight: bold;
   color: black;
+}
+
+.read{
+  background-color: #F2F6FC;
 }

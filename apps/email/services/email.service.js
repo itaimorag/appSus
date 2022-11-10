@@ -58,6 +58,8 @@ function query(criteria) {
 
 
             }
+
+            if(criteria.isStared) return emails.filter(email => email.isStared)
         })
 
 }

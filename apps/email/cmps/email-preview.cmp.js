@@ -5,13 +5,15 @@ export default {
     props: ['email'],
     template: `
     <section @click="emailSelect(email)" :class="checkIfRead(email)" class="email-preview">
+        <button v-if="!email.isStared" @click.stop="starEmail(true)"><i class="fa fa-star-o"></i></button>
+        <button v-if="email.isStared" @click.stop="starEmail(false)"><i class="fa fa-star"></i></button>
             <p class="bolded">From: {{substringSender}}</p>
             <p class="bolded">To: {{substringReceiver}}</p>
         <p class="bold">{{ email.subject }}</p>
         <p class="body">{{ substringBody }}</p>
         <p >{{formattedSeenAt}}</p>
     </section>
-    <email-details @replied="reply" :email="selectedEmail" v-if="isEmailOpen" />
+    <email-details @removed="" @replied="reply" :email="selectedEmail" v-if="isEmailOpen" />
     `,
     data() {
         return {
@@ -28,10 +30,15 @@ export default {
         },
         checkIfRead(email){
             if(!email.isRead) return 'unread'
+            return 'read'
         },
         reply(from){
             console.log(from);
             this.$emit('replied', from)
+        },
+        starEmail(val){
+            this.email.isStared = val
+            emailService.save(this.email)
         }
     },
     computed: {
