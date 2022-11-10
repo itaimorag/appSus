@@ -29,10 +29,13 @@ margin-bottom: 10px;
 display: flex;
 gap: 5px;
 }
-.add-note-buttons button{
+.add-note-inputs button{
     border: 1px solid #88888861;
     border-radius: 4px;
     min-height: 3vw;
     min-width:3vw ;
     
+}
+.save-add-note button{
+    border: 1px solid rgba(128, 128, 128, 0.438);
 }
