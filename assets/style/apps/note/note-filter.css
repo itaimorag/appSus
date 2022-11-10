@@ -25,3 +25,9 @@
     background-color: transparent;
      max-width: 10px;
 }
+
+.Keep-filter-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -6,7 +6,7 @@ export default {
 	template: `
         <header class="app-header">
             <h1>AppSus</h1>
-            <button @click="changeOpen"><img src="../imgs/dots.JPG" /></i> </button>
+            <button @click="changeOpen"><img src="../imgs/dots.JPG"/></button>
             <app-hamburger @click="changeOpen" v-if="isOpen"/>
         </header>
     `,
