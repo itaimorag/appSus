@@ -3,7 +3,9 @@
 .note-app-page{
     padding: 10px;
 }
-
+.note-app-page{
+    height: 80vh;
+}
 
 .notes-list-ul{
     columns: 150px;
@@ -13,7 +15,6 @@
 }
 
 .notes-list-ul .note{
-    background: rgba(202, 33, 33, 0.267);
     padding: 1em;
     margin-bottom: 1.3em;
     -webkit-column-break-inside: avoid;

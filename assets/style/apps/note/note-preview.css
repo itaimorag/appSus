@@ -1,1 +1,10 @@
 /* sdcd */
+
+.note-preview h2{
+    text-align: center;
+}
+
+.note-preview .todos-ul{
+    list-style: none;
+    display: contents;
+}

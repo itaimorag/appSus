@@ -11,11 +11,11 @@ export default {
             <li v-for="(todo, idx) in note.info.todos"
             @click="toggleTodoComplete(idx)"
             class="todo-li">
+            <button @click.stop="removeTodo(idx)"
+            class="todo-remove-btn">
+            X
+            </button>
                 {{ todo.txt }}
-                <button @click.stop="removeTodo(idx)"
-                class="todo-remove-btn">
-                X
-                </button>
             </li>
             
         </ul>
