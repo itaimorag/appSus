@@ -178,6 +178,7 @@ function _createEmails() {
                     subject: 'Chart of the Day: International Seaways - An Oceangoing Pi',
                     body: 'he Chart of the Day belongs to the petroleum tanker company International Seaways (INSW). I found the stock by sorting the Russell 3000 Index stocks first by the most frequent number of new highs in the last month and having a Trend Spotter buy signal then used the Flipchart feature to review the charts for consistent price appreciation. Since the Trend Spotter first signaled a buy on 10/12 the stock gained 26.42%.',
                     isRead: false,
+                    status:'trash',
                     sentAt: 12345846484,
                     from: 'user@appsus.com',
                     to: 'bachrat@gmail.com'
@@ -188,6 +189,7 @@ function _createEmails() {
                     subject: 'היי , נובמבר חם בסופר-פארם אנחנו מזמינים אותך ליהנות ממגוון רחב של מבצעי ענק במסגרת Shopping IL | פרסומת',
                     body: 'נייה זו נעשית בדיוור ישיר בהסתמך על מידע מתוך מאגר מידע שבבעלות סופר-פארם (ישראל) בע"מ שמספרו 700061112, או כל מאגר מידע אחר שבבעלות החברה, בהתאם למדיניות הפרטיות של סופר-פארם. בכל עת, ניתן לבקש את הסרתך מרשימת התפוצה המשמשת למשלוח מידע שיווקי בפניה לשירות הלקוחות במייל NLcustomers@Super-Pharm.co.il או ע"י השבה למייל זה.',
                     isRead: true,
+                    isDraft:true,
                     sentAt: 141514846,
                     from: 'user@appsus.com',
                     to: 'superPharm@gmail.com'
@@ -198,6 +200,7 @@ function _createEmails() {
                     subject: 'matan, you’re getting noticed',
                     body: 'Your profile is looking greatttt Your work and accomplishments are being recognized',
                     isRead: true,
+                    status:'trash',
                     sentAt: 154845612,
                     from: 'user@appsus.com',
                     to: 'linkedin@gmail.com'
@@ -218,6 +221,8 @@ function _createEmails() {
                     subject: 'Miss you!',
                     body: 'Would love to catch up sometimes',
                     isRead: false,
+                    status:'trash',
+                    isDraft:true,
                     sentAt: 1659907863,
                     from: 'momo@momo.com',
                     to: 'user@appsus.com'
@@ -228,6 +233,8 @@ function _createEmails() {
                     subject: '!!!',
                     body: 'Game of as rest time eyes with of this it. Add was music merry any truth since going. Happiness she ham but instantly put departure propriety. She amiable all without say spirits shy clothes morning. Frankness in extensive',
                     isRead: false,
+                    isStared:true,
+                    isDraft:true,
                     sentAt: 1652907863,
                     from: 'wheat@momo.com',
                     to: 'user@appsus.com'
@@ -248,6 +255,7 @@ function _createEmails() {
                     subject: 'Hi , how  are you? ',
                     body: 'I wanted to know about my grades at the test yesterday',
                     isRead: true,
+                    isStared:true,
                     sentAt: 1197652430,
                     from: 'user@appsus.com',
                     to: 'Teacher@momo.com'
@@ -258,6 +266,7 @@ function _createEmails() {
                     subject: 'היי , נובמבר חם בסופר-פארם אנחנו מזמינים אותך ליהנות ממגוון רחב של מבצעי ענק במסגרת Shopping IL | פרסומת',
                     body: 'נייה זו נעשית בדיוור ישיר בהסתמך על מידע מתוך מאגר מידע שבבעלות סופר-פארם (ישראל) בע"מ שמספרו 700061112, או כל מאגר מידע אחר שבבעלות החברה, בהתאם למדיניות הפרטיות של סופר-פארם. בכל עת, ניתן לבקש את הסרתך מרשימת התפוצה המשמשת למשלוח מידע שיווקי בפניה לשירות הלקוחות במייל NLcustomers@Super-Pharm.co.il או ע"י השבה למייל זה.',
                     isRead: true,
+                    isStared:true,
                     sentAt: 141514846,
                     from: 'superPharm@gmail.com',
                     to: 'user@appsus.com'
@@ -300,6 +309,91 @@ function _createEmails() {
                     isRead: true,
                     sentAt: 141514846,
                     from: 'superPharm@gmail.com',
+                    to: 'user@appsus.com'
+
+                },
+                {
+                    id: utilService.makeId(),
+                    subject: 'hi you!',
+                    body: 'We would like to give you a chance',
+                    isRead: true,
+                    sentAt: 1551133930594,
+                    from: 'buki-nae@momo.com',
+                    to: 'user@appsus.com'
+
+                },
+                {
+                    id: utilService.makeId(),
+                    subject: 'Where have you been?',
+                    body: 'Ive been looking for you, where are you??',
+                    isRead: false,
+                    sentAt: 1670111035,
+                    from: 'yuliaBeker321@momo.com',
+                    to: 'user@appsus.com'
+
+                }, {
+                    id: utilService.makeId(),
+                    subject: 'We havent seen you recently!',
+                    body: 'Log in and show us that youre active😀',
+                    isRead: false,
+                    sentAt: 1197652430,
+                    from: 'facebook@momo.com',
+                    to: 'user@appsus.com'
+
+                },
+                {
+                    id: utilService.makeId(),
+                    subject: 'היי , נובמבר חם בסופר-פארם אנחנו מזמינים אותך ליהנות ממגוון רחב של מבצעי ענק במסגרת Shopping IL | פרסומת',
+                    body: 'נייה זו נעשית בדיוור ישיר בהסתמך על מידע מתוך מאגר מידע שבבעלות סופר-פארם (ישראל) בע"מ שמספרו 700061112, או כל מאגר מידע אחר שבבעלות החברה, בהתאם למדיניות הפרטיות של סופר-פארם. בכל עת, ניתן לבקש את הסרתך מרשימת התפוצה המשמשת למשלוח מידע שיווקי בפניה לשירות הלקוחות במייל NLcustomers@Super-Pharm.co.il או ע"י השבה למייל זה.',
+                    isRead: true,
+                    isDraft:true,
+                    sentAt: 141514846,
+                    from: 'user@appsus.com',
+                    to: 'superPharm@gmail.com'
+
+                },
+                {
+                    id: utilService.makeId(),
+                    subject: 'matan, you’re getting noticed',
+                    body: 'Your profile is looking greatttt Your work and accomplishments are being recognized',
+                    isRead: true,
+                    status:'trash',
+                    sentAt: 154845612,
+                    from: 'user@appsus.com',
+                    to: 'linkedin@gmail.com'
+
+                },
+                {
+                    id: utilService.makeId(),
+                    subject: 'היי , נובמבר חם בסופר-פארם אנחנו מזמינים אותך ליהנות ממגוון רחב של מבצעי ענק במסגרת Shopping IL | פרסומת',
+                    body: 'נייה זו נעשית בדיוור ישיר בהסתמך על מידע מתוך מאגר מידע שבבעלות סופר-פארם (ישראל) בע"מ שמספרו 700061112, או כל מאגר מידע אחר שבבעלות החברה, בהתאם למדיניות הפרטיות של סופר-פארם. בכל עת, ניתן לבקש את הסרתך מרשימת התפוצה המשמשת למשלוח מידע שיווקי בפניה לשירות הלקוחות במייל NLcustomers@Super-Pharm.co.il או ע"י השבה למייל זה.',
+                    isRead: true,
+                    sentAt: 141514846,
+                    from: 'superPharm@gmail.com',
+                    to: 'user@appsus.com'
+
+                },
+                {
+                    id: utilService.makeId(),
+                    subject: 'Miss you!',
+                    body: 'Would love to catch up sometimes',
+                    isRead: false,
+                    status:'trash',
+                    isDraft:true,
+                    sentAt: 1659907863,
+                    from: 'momo@momo.com',
+                    to: 'user@appsus.com'
+
+                },
+                {
+                    id: utilService.makeId(),
+                    subject: '!!!',
+                    body: 'Game of as rest time eyes with of this it. Add was music merry any truth since going. Happiness she ham but instantly put departure propriety. She amiable all without say spirits shy clothes morning. Frankness in extensive',
+                    isRead: false,
+                    isStared:true,
+                    isDraft:true,
+                    sentAt: 1652907863,
+                    from: 'wheat@momo.com',
                     to: 'user@appsus.com'
 
                 },

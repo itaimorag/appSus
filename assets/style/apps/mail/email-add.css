@@ -6,8 +6,8 @@
     align-items: center;
     bottom:10.2vh;
     right: 5vh;
-    height: 55%;
-    width: 35%;
+    height: 58%;
+    width: 44%;
     min-width: 320px;
     border-radius: 30px;
     box-shadow: 1px -14px 47px -17px rgba(0,0,0,0.46);
@@ -108,5 +108,11 @@ button.line{
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+.add-email button{
+    border: none;
+    background-color: inherit;
+    margin: 8px;
 }
 

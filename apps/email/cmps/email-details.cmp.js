@@ -39,12 +39,15 @@ export default {
                 showSuccessMsg('Item removed')
             }
         },
+
+        reply() {
+            this.$emit('replied', this.email.from)
+        }
+    },
+    computed: {
         formattedTime(){
             console.log('hi');
            return new Date(this.email.sentAt)
         },
-        reply() {
-            this.$emit('replied', this.email.from)
-        }
     },
 }

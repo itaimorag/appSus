@@ -24,7 +24,7 @@ export default {
                 <button class="line"><i class="fa fa-file-image-o" style="font-size:18px"></i></button>
                 <button class="line"><i class="fa fa-file-excel-o" style="font-size:18px"></i></button>
                 <button class="line"><i class="fa fa-image" style="font-size:18px"></i></button>
-                <button @click="sendEmail"><i class="fa fa-send" style="font-size:24px"></i></button>
+                <button @click="sendEmail"><i class="fa fa-send send-btn" style="font-size:24px"></i></button>
             </div>
                 <button class="close-btn" @click="$emit('closeMsg')">X</button>
 

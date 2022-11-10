@@ -14,7 +14,6 @@ export default {
             isNewEmail: false,
             criteria: {
                 status: '',
-                // txt: '', // no need to support complex text search
                 isRead: null,
                 isStared: null,
                 lables: []
