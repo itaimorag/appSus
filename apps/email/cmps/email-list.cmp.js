@@ -7,7 +7,7 @@ export default {
 <section class="email-list">
     <ul>
         <li v-for="email in emails" :key="email.id">
-            <email-preview @renderMsg="onRenderMsg" :email="email"></email-preview>
+            <email-preview @rerender="$emit('reRender')" @renderMsg="onRenderMsg" :email="email"></email-preview>
         </li>
     </ul>
 </section>

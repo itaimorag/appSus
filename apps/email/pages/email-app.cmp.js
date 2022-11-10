@@ -8,10 +8,10 @@ import emailList from '../cmps/email-list.cmp.js'
 export default {
     template: `
     <div className="flex">
-        <email-navbar @newEmail="newEmailRender" />
+        <email-navbar @filter="filterCreteria" @newEmail="newEmailRender" />
         <div className="flex-col" >
             <email-filter @filter="setFilter" />
-            <email-list v-if="emails" :emails="emailsToShow" />
+            <email-list @reRender="renderQuery" v-if="emails" :emails="emailsToShow" />
         </div>
         <email-add v-if="isNewEmail" @closeMsg="closeEmail"/>
     </div>
@@ -21,10 +21,17 @@ export default {
            emails: null,
            filterBy: {},
            isNewEmail:false,
+           criteria: {
+            status: 'inbox',
+            // txt: '', // no need to support complex text search
+            isRead: null, 
+            isStared: null, 
+            lables: [] 
+           }
         }
     },
     created(){
-      emailService.query()
+      emailService.query(this.criteria)
         .then(emails => {
             this.emails = emails
         })
@@ -39,6 +46,21 @@ export default {
         },
         closeEmail(){
             this.isNewEmail = false
+        },
+        filterCreteria(criteria){
+            this.criteria = criteria
+            console.log(this.criteria);
+            emailService.query(this.criteria)
+            .then(emails => {
+                this.emails = emails
+            })
+        },
+        renderQuery(){
+            console.log(this.criteria);
+            emailService.query(this.criteria)
+            .then(emails => {
+                this.emails = emails
+            })
         }
         },
        
