@@ -47,12 +47,9 @@ export default {
                 })
         },
         pinNote(currdNote) {
-            console.log(`foo = `, this.notes)
-            console.log(`foo = `, currdNote)
             const idx = this.notes.findIndex(note =>note.id === currdNote.id)
             currdNote.isPinned = !currdNote.isPinned
             this.notes.splice(idx, 1)
-            console.log(`foo = `, idx)
             if (!currdNote.isPinned) this.notes.push(currdNote)
             else this.notes.unshift(currdNote)
             noteService.saveAll(this.notes)
@@ -66,16 +63,16 @@ export default {
                 })
         },
         addNote(newNote) {
-            console.log(`newNote = `, newNote)
             noteService.save(newNote)
             this.notes.push(newNote)
         },
         duplicate(note) {
-            note.id = null
-            note.isPinned=false
-            noteService.save(note)
-            .then(note => {
-                this.notes.push(note)
+            var newNote=JSON.parse(JSON.stringify(note));
+            newNote.id = null
+            newNote.isPinned=false
+            noteService.save(newNote)
+            .then(newNote => {
+                this.notes.push(newNote)
             })
         },
         filter(filterBy) {

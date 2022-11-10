@@ -112,12 +112,12 @@ function _createNotes() {
                 type: "note-todos",
                 isPinned: false,
                 info: {
-                    label: "Get my stuff together",
+                    label: "Shopping list",
                     todos: [
-                        { txt: "Driving liscence", doneAt: null },
-                        { txt: "Coding power", doneAt: 187111111 },
-                        { txt: "Driving liscence", doneAt: null },
-                        { txt: "Driving liscence", doneAt: null }
+                        { txt: "bannana", doneAt: null },
+                        { txt: "book", doneAt: 187111111 },
+                        { txt: "headphones", doneAt: null },
+                        { txt: "t-shirt", doneAt: null }
                     ]
                 },
                 style: {

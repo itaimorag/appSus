@@ -1,5 +1,32 @@
-/* dasd */
 
+.notes-list-ul{
+    columns: 200px;
+    column-gap: 2em;
+    list-style-type: none;
+    padding: 0;
+}
+
+.notes-list-ul .note{
+    padding: 1em;
+    margin-bottom: 1.3em;
+    -webkit-column-break-inside: avoid;
+    border-radius: 2px;
+    color: black;
+}
+
+.actions-note-item{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+.actions-note-item button{
+  background-color: transparent;
+}
+.actions-note-item input{
+    height: 20px;
+    width: 20px;
+}
 
 .pin-button{
    position: relative;
@@ -14,12 +41,22 @@
     display: flex;
     justify-content: space-between;
 }
+.notes-list-ul .note{
+    border-radius: 10px;
+}
 
 .actions-note-item > *{
     border-radius: 50%;
     border: none;
     width: 30px;
     height: 30px;
+}
+
+.golden-star{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%)
 }
 
 .fa-star-o:before{

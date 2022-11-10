@@ -3,7 +3,7 @@ import { noteService } from '../services/note.service.js'
 
 
 export default {
-    props: ['note','hover'],
+    props: ['note'],
     template: `
      <section class="note-template">
      <h2> {{ note.info.label }} </h2>
@@ -11,7 +11,7 @@ export default {
             <li v-for="(todo, idx) in note.info.todos"
             @click="toggleTodoComplete(idx)"
             class="todo-li">
-            <button v-if="hover" @click.stop="removeTodo(idx)"
+            <button @click.stop="removeTodo(idx)"
             class="todo-remove-btn">
             <i class="fa fa-trash-o"></i>
             </button>
@@ -22,7 +22,7 @@ export default {
         <input @keyup.enter="addTodo" 
             v-model="nextTodo" 
             class="next-todo-input"
-            placeholder="I need to do..." >
+            placeholder="+ Click to add todo" >
     </section>
 `,
     data() {
