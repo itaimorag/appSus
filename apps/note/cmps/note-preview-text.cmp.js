@@ -2,10 +2,8 @@ export default {
     props: ['note'],
     template: `
     <section class="note-template">
-        <p>{{ note.info.txt }}</p>
+        <h2>{{ note.info.txt }}</h2>
     </section>
 `,
-created() {
-   console.log(`foo = `, this.note)
-},
+
 };
