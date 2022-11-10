@@ -12,7 +12,7 @@ export default {
             <input v-if="cmpType==='note-img'" v-model="titleValue" type="text" placeholder="Enter image title"/>
             <input v-if="cmpType==='note-todos'" v-model="textValue" type="text" placeholder="Write 1 todo"/>
             <input v-if="cmpType==='note-todos'" v-model="titleValue" type="text" placeholder="Write todo title"/>
-            <button @click="addNote" title="Save"><i class="fa fa-check-square"></i></button>
+            <button @click="addNote" title="Save" class="save-add-note"><i class="fa fa-check-square"></i></button>
         </section>
         <section class="add-note-buttons">
             <button @click="changeCmpType('note-video')" title="Video"><i class="fa fa-video-camera"></i></button>

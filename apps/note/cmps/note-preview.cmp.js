@@ -17,7 +17,7 @@ export default {
                         <section v-if="hover" class="actions-note-item">
                             <button @click="remove(note.id)"><i class="fa fa-trash-o"></i></button>
                             <div @click="pin(note)" class="pin-button">
-                                <i class="fa fa-star-o" v-if="!note.isPinned"></i>
+                                <i class="fa fa-star-o grey-star" v-if="!note.isPinned"></i>
                                 <span class="golden-star" v-else>⭐</span>                       
                             </div>
                             <button @click="duplicate(note)"><i class="fa fa-clone"></i></button>
