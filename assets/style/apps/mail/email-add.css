@@ -39,10 +39,11 @@ button.line{
 }
 
 .add-email .to{
+    text-align: left;
     height: 10%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     width: 100%;
     border-bottom:  1px solid rgb(225, 233, 240);
 }

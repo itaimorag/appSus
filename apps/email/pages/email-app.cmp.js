@@ -11,71 +11,79 @@ export default {
         <email-navbar @filter="filterCreteria" @newEmail="newEmailRender" />
         <div className="flex-col" >
             <email-filter @filter="setFilter" />
-            <email-list @reRender="renderQuery" v-if="emails" :emails="emailsToShow" />
+            <email-list @replied="reply" v-if="emails" :emails="emailsToShow" />
         </div>
-        <email-add v-if="isNewEmail" @closeMsg="closeEmail"/>
+        <email-add :from="from" v-if="isNewEmail" @closeMsg="closeEmail"/>
     </div>
     `,
-    data(){
-        return { 
-           emails: null,
-           filterBy: {},
-           isNewEmail:false,
-           criteria: {
-            status: 'inbox',
-            // txt: '', // no need to support complex text search
-            isRead: null, 
-            isStared: null, 
-            lables: [] 
-           }
+    data() {
+        return {
+            emails: null,
+            filterBy: {},
+            from: null,
+            isNewEmail: false,
+            criteria: {
+                status: 'inbox',
+                // txt: '', // no need to support complex text search
+                isRead: null,
+                isStared: null,
+                lables: []
+            }
         }
     },
-    created(){
-      emailService.query(this.criteria)
-        .then(emails => {
-            this.emails = emails
-        })
+    created() {
+        emailService.query(this.criteria)
+            .then(emails => {
+                this.emails = emails
+            })
     },
     methods: {
         setFilter(filterBy) {
             this.filterBy = filterBy
         },
-        newEmailRender(val){
+        newEmailRender(val) {
             console.log(val);
             this.isNewEmail = true;
         },
-        closeEmail(){
-            this.isNewEmail = false
+        reply(from) {
+            console.log(from);
+            this.isNewEmail = true;
+            this.from = from
+            console.log(this.from);
         },
-        filterCreteria(criteria){
+        closeEmail() {
+            this.isNewEmail = false
+            this.from = null
+        },
+        filterCreteria(criteria) {
             this.criteria = criteria
             console.log(this.criteria);
             emailService.query(this.criteria)
-            .then(emails => {
-                this.emails = emails
-            })
+                .then(emails => {
+                    this.emails = emails
+                })
         },
-        renderQuery(){
+        renderQuery() {
             console.log(this.criteria);
             emailService.query(this.criteria)
-            .then(emails => {
-                this.emails = emails
-            })
+                .then(emails => {
+                    this.emails = emails
+                })
         }
-        },
-       
+    },
+
     computed: {
         emailsToShow() {
             const regex = new RegExp(this.filterBy.title, 'i')
-            return this.emails.filter(email => (regex.test(email.subject)|| regex.test(email.from) || regex.test(email.body)))
+            return this.emails.filter(email => (regex.test(email.subject) || regex.test(email.from) || regex.test(email.body)))
         },
     },
     components: {
-    emailFilter,
-    emailNavbar,
-    emailList,
-    emailAdd
+        emailFilter,
+        emailNavbar,
+        emailList,
+        emailAdd
 
-    
+
     }
 }
