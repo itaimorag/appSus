@@ -163,6 +163,46 @@ function _createEmails() {
                     to: 'facebook@momo.com'
 
                 },
+                {
+                    id: utilService.makeId(),
+                    subject: 'WHAT IS THE FAKE MAIL GENERATOR?',
+                    body: 'The Fake Mail Generator is an absolutely free disposable email system. By simply visiting this site the above address has already been activated. Use it instead of your regular email address to avoid spam. When an email is received it will pop up instantly on this pageasd asdasdasdasdd dasar email address to avoid',
+                    isRead: false,
+                    sentAt: 1132456189,
+                    from: 'user@appsus.com',
+                    to: 'menashe@momo.com'
+
+                },
+                {
+                    id: utilService.makeId(),
+                    subject: 'Chart of the Day: International Seaways - An Oceangoing Pi',
+                    body: 'he Chart of the Day belongs to the petroleum tanker company International Seaways (INSW). I found the stock by sorting the Russell 3000 Index stocks first by the most frequent number of new highs in the last month and having a Trend Spotter buy signal then used the Flipchart feature to review the charts for consistent price appreciation. Since the Trend Spotter first signaled a buy on 10/12 the stock gained 26.42%.',
+                    isRead: false,
+                    sentAt: 12345846484,
+                    from: 'user@appsus.com',
+                    to: 'bachrat@gmail.com'
+
+                },
+                {
+                    id: utilService.makeId(),
+                    subject: 'היי , נובמבר חם בסופר-פארם אנחנו מזמינים אותך ליהנות ממגוון רחב של מבצעי ענק במסגרת Shopping IL | פרסומת',
+                    body: 'נייה זו נעשית בדיוור ישיר בהסתמך על מידע מתוך מאגר מידע שבבעלות סופר-פארם (ישראל) בע"מ שמספרו 700061112, או כל מאגר מידע אחר שבבעלות החברה, בהתאם למדיניות הפרטיות של סופר-פארם. בכל עת, ניתן לבקש את הסרתך מרשימת התפוצה המשמשת למשלוח מידע שיווקי בפניה לשירות הלקוחות במייל NLcustomers@Super-Pharm.co.il או ע"י השבה למייל זה.',
+                    isRead: true,
+                    sentAt: 141514846,
+                    from: 'user@appsus.com',
+                    to: 'superPharm@gmail.com'
+
+                },
+                {
+                    id: utilService.makeId(),
+                    subject: 'matan, you’re getting noticed',
+                    body: 'Your profile is looking greatttt Your work and accomplishments are being recognized',
+                    isRead: true,
+                    sentAt: 154845612,
+                    from: 'user@appsus.com',
+                    to: 'linkedin@gmail.com'
+
+                },
             ]
         utilService.saveToStorage(EMAIL_KEY, emails)
     }
