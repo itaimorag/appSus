@@ -31,7 +31,7 @@
 }
 
 .details-section button{
-    background-color: inherit;
+    background-color: transparent;
     border: none;
     margin-inline: 3px;
     width: fit-content;

@@ -6,7 +6,7 @@
     height: 50px;
     line-height: 50px;
     text-align: left;
-    padding-inline-end: 15px;
+    padding-inline: 15px;
     
 }
 
@@ -29,4 +29,13 @@ width: 42%;
 
 .email-preview:hover {
     box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.fa-star-o, .fa-star{
+    margin-inline-end: 20px;
+}
+
+.fa-envelope-o, .fa-envelope-open-o{
+    margin: 5px;
 }
