@@ -23,7 +23,7 @@ function post(entityType, newEntity, append = true) {
     newEntity.id = _makeId()
     return query(entityType).then(entities => {
         append ? entities.push(newEntity) : entities.unshift(newEntity)
-        _save(entityType, entities)
+        save(entityType, entities)
         return newEntity
     })
 }
@@ -32,7 +32,7 @@ function put(entityType, updatedEntity) {
     return query(entityType).then(entities => {
         const idx = entities.findIndex(entity => entity.id === updatedEntity.id)
         entities.splice(idx, 1, updatedEntity)
-        _save(entityType, entities)
+        save(entityType, entities)
         return updatedEntity
     })
 }
@@ -45,15 +45,15 @@ function remove(entityType, entityId) {
         entities.splice(idx, 1)
         console.log('success');
         console.log(entities);
-        _save(entityType, entities)
+        save(entityType, entities)
     })
 }
 
-// Private functions
-
-function _save(entityType, entities) {
+function save(entityType, entities) {
     localStorage.setItem(entityType, JSON.stringify(entities))
 }
+// Private functions
+
 
 function _makeId(length = 5) {
     var text = ''

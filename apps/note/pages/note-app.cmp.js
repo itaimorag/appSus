@@ -15,6 +15,7 @@ export default {
         <note-list 
         @remove="removeNote"
         @pin="pinNote"
+        @duplicate="duplicate"
         @changeColor="changeColor"
         :notes="notesToShow"/>
     </section>
@@ -44,26 +45,16 @@ export default {
                     showErrorMsg('Cannot remove note')
                 })
         },
-        pinNote(note) {
-console.log(`foo = `, this.notes)
-            note.isPinned=!note.isPinned
-            const idx = this.notes.findIndex(note => note === note)
-            this.notes.splice(idx,1)
+        pinNote(currdNote) {
             console.log(`foo = `, this.notes)
-            this.notes.unshift(note)
-
-            console.log(`foo = `, this.notes)
-            // noteService.get(noteId)
-            //     .then(() => {
-            //         const idx = this.notes.findIndex(note => note.id === noteId)
-            //         this.notes[idx].isPinned = !this.notes[idx].isPinned
-
-            //         noteService.save(this.notes[idx])
-            //     })
-            //     .catch(err => {
-            //         console.log('OOPS', err)
-            //         showErrorMsg('Cannot change pin state')
-            //     })
+            console.log(`foo = `, currdNote)
+            const idx = this.notes.findIndex(note =>note.id === currdNote.id)
+            currdNote.isPinned = !currdNote.isPinned
+            this.notes.splice(idx, 1)
+            console.log(`foo = `, idx)
+            if (!currdNote.isPinned) this.notes.push(currdNote)
+            else this.notes.unshift(currdNote)
+            noteService.saveAll(this.notes)
         },
         changeColor(noteId, backgroundColor) {
             noteService.get(noteId)
@@ -77,6 +68,14 @@ console.log(`foo = `, this.notes)
             console.log(`newNote = `, newNote)
             noteService.save(newNote)
             this.notes.push(newNote)
+        },
+        duplicate(note) {
+            note.id = null
+            note.isPinned=false
+            noteService.save(note)
+            .then(note => {
+                this.notes.push(note)
+            })
         },
         filter(filterBy) {
             this.filterBy = filterBy

@@ -1,6 +1,7 @@
 import { noteService } from '../services/note.service.js'
 
 export default {
+    emits:['addNote'],
     template: `
        <input v-if="cmpType==='note-txt'" v-model="textValue" type="text" placeholder="Write eveything you want"/>
        <input v-if="cmpType==='note-video'" v-model="textValue" type="text" placeholder="Enter video url"/>
