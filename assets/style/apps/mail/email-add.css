@@ -56,6 +56,7 @@ button.line{
 
 .to input{
     width: 95%;
+    height: 100%;
     border: none;
     outline: none;
     font-size: 16px;
@@ -74,6 +75,7 @@ button.line{
 
 .subject input{
     width: 90%;
+    height: 100%;
     border: none;
     font-size: 14px;
     outline: none;
