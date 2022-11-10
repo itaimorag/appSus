@@ -45,7 +45,7 @@ export default {
                             txt: this.textValue
                         },
                         style: {
-                            backgroundColor: "#f16a81"
+                            backgroundColor: noteService.makeRandomColor()
                         }
                     }
                     break;
@@ -61,7 +61,7 @@ export default {
                             ]
                         },
                         style: {
-                            backgroundColor: "#f16a81"
+                            backgroundColor: noteService.makeRandomColor()
                         }
                     }
                     break;
@@ -75,7 +75,7 @@ export default {
                             url: this.textValue
                         },
                         style: {
-                            backgroundColor: "#f16a81"
+                            backgroundColor: noteService.makeRandomColor()
                         }
                     }
                     break;
@@ -89,7 +89,7 @@ export default {
                             url: this.textValue
                         },
                         style: {
-                            backgroundColor: "#f16a81"
+                            backgroundColor: noteService.makeRandomColor()
                         }
                     }
                     break;

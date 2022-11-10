@@ -13,6 +13,7 @@ export const noteService = {
     putReview,
     getNextNoteId,
     saveAll,
+    makeRandomColor,
 }
 
 _createNotes()
@@ -133,5 +134,10 @@ function _createNotes() {
     return notes
 }
 
+function makeRandomColor(){
+let color=['#826AED','#C879FF','#FFB7FF','#3BF4FB','#CAFF8A']
+         let idx=  utilService.getRandomInt(0,4)
+         return color[idx]
+}
 
 
