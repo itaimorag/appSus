@@ -37,3 +37,7 @@
 @import 'apps/note/note-filter.css';
 @import 'apps/note/note-list.css';
 @import 'apps/note/note-preview.css';
+
+
+
+@import '../../apps/book/css/styles.css'

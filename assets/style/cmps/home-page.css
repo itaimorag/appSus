@@ -1,4 +1,6 @@
 .home-page{
+    position: relative;
+    bottom: 100px;
     min-height: 78vh;
     display: flex;
     align-items: center;
@@ -6,24 +8,46 @@
     flex-direction: column;
 }
 
-.home-page .app{
-    padding: 20px;
+.home-page .logo{
+    text-decoration: underline;
 }
 
+.home-page h1{
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.home-page .app{
+    margin: 40px;
+    font-size: 1.7em;
+
+    transition: 1s;
+}
+
+.home-page .app:hover{
+    color: #2f2f2f;
+    bottom: 10px;
+scale: 1.1;
+
+}
+
+
 .apps-container{
-    width: 40%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+
 
 .debug{
     outline: 1px solid red;
 }
 
 .book-app{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 
 .email-app{

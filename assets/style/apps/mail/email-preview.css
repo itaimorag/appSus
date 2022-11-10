@@ -19,6 +19,7 @@
 .email-preview .bolded{
     min-width: 15%;
     overflow: hidden;
+    margin-inline-end: 5px;
 }
 
 .email-preview .body{

@@ -1,0 +1,49 @@
+.add-new-book{
+    min-height: 76vh;
+    display: flex;
+align-items: center;
+flex-direction: column;
+text-align: center;
+width: 100%;
+}
+
+.add-component{
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    width: 50%;
+}
+
+.add-new-book input{
+    margin-inline: auto;
+    margin-top: 30px;
+    width: 20vh;
+}
+
+
+
+.add-new-book .selection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 10px;
+}
+
+.selection button{
+    height: fit-content;
+    margin-inline-start: 10px;
+}
+
+.selection li{
+    list-style-type: none;
+}
+
+.add-component ul{
+    padding: 0;
+    margin-top: 20px;
+}
+
+.add-book-btn{
+    margin-top: 15px;
+    font-size: 25px;
+    color: #2f2f2f;
+}
