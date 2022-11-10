@@ -1,1 +1,37 @@
 /* dasd */
+
+.add-note{
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-note-inputs{
+    width: 80vw;
+display: flex;
+justify-content: center;
+gap: 20px;
+margin-bottom: 10px;
+}
+
+.add-note-inputs input{
+    border: 1px solid #88888861;
+    border-radius: 6px;
+    width: 40%;
+    padding: 10px;
+    box-shadow: 1px 1px 1px 1px #88888861;
+}
+
+.add-note-buttons{
+display: flex;
+gap: 5px;
+}
+.add-note-buttons button{
+    border: 1px solid #88888861;
+    border-radius: 4px;
+    min-height: 3vw;
+    min-width:3vw ;
+    
+}

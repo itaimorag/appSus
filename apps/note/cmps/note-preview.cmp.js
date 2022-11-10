@@ -4,18 +4,14 @@ import noteTodos from './note-preview-todos.cmp.js'
 import noteVideo from './note-preview-video.cmp.js'
 
 
-
-
 export default {
     props: ['note'],
     template: `
-        <section class="note-preview">    
-      
+        <section class="note-preview">     
                         <component :is="note.type"
                             :class="note.type"
                             :note="note">
-                        </component>   
-                     
+                        </component>                       
                 </section>
     `,
     data() {

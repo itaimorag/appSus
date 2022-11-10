@@ -3,18 +3,24 @@ import { noteService } from '../services/note.service.js'
 export default {
     emits:['addNote'],
     template: `
-       <input v-if="cmpType==='note-txt'" v-model="textValue" type="text" placeholder="Write eveything you want"/>
-       <input v-if="cmpType==='note-video'" v-model="textValue" type="text" placeholder="Enter video url"/>
-       <input v-if="cmpType==='note-video'" v-model="titleValue" type="text" placeholder="Enter video title"/>
-       <input v-if="cmpType==='note-img'" v-model="textValue" type="text" placeholder="Enter image url"/>
-       <input v-if="cmpType==='note-img'" v-model="titleValue" type="text" placeholder="Enter image title"/>
-       <input v-if="cmpType==='note-todos'" v-model="textValue" type="text" placeholder="Write 1 todo"/>
-       <input v-if="cmpType==='note-todos'" v-model="titleValue" type="text" placeholder="Write todo title"/>
-                 <button @click="changeCmpType('note-video')">video</button>
-                 <button @click="changeCmpType('note-img')">image</button>
-                <button @click="changeCmpType('note-txt')">text</button>
-                <button @click="changeCmpType('note-todos')">todos</button>
-                <button @click="addNote">Add</button>
+    <section class="add-note">
+        <section class="add-note-inputs">
+            <input v-if="cmpType==='note-txt'" v-model="textValue" type="text" placeholder="Write eveything you want"/>
+            <input v-if="cmpType==='note-video'" v-model="textValue" type="text" placeholder="Enter video url"/>
+            <input v-if="cmpType==='note-video'" v-model="titleValue" type="text" placeholder="Enter video title"/>
+            <input v-if="cmpType==='note-img'" v-model="textValue" type="text" placeholder="Enter image url"/>
+            <input v-if="cmpType==='note-img'" v-model="titleValue" type="text" placeholder="Enter image title"/>
+            <input v-if="cmpType==='note-todos'" v-model="textValue" type="text" placeholder="Write 1 todo"/>
+            <input v-if="cmpType==='note-todos'" v-model="titleValue" type="text" placeholder="Write todo title"/>
+        </section>
+        <section class="add-note-buttons">
+            <button @click="changeCmpType('note-video')" title="Video"><i class="fa fa-video-camera"></i></button>
+        <button @click="changeCmpType('note-img')" title="Image"><i class="fa fa-image"></i></button>
+        <button @click="changeCmpType('note-txt')" title="Text"><i class="fa fa-pencil-square-o"></i></button>
+        <button @click="changeCmpType('note-todos')" title="Todos"><i class="fa fa-navicon"></i></button>
+        <button @click="addNote" title="Save"><i class="fa fa-check-square"></i></button>
+        </section>
+    </section>
     `,
     data() {
         return {
@@ -27,7 +33,6 @@ export default {
     methods: {
         changeCmpType(cmpType) {
             this.cmpType = cmpType
-            console.log(`cmpType = `, cmpType)
         },
         addNote() {
             switch (this.cmpType) {
@@ -89,9 +94,7 @@ export default {
                     }
                     break;
             }
-            // console.log(`this.newNote = `, this.newNote)
             this.$emit('addNote', this.newNote)
-            // noteService.save(this.newNote)
             this.textValue=''
             this.titleValue=''
         }

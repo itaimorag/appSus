@@ -11,6 +11,7 @@ export default {
     template: `
     <section class="note-app-page">
             <note-filter @filter="filter"/>
+            <hr />
             <note-add @addNote="addNote"/>
         <note-list 
         @remove="removeNote"
