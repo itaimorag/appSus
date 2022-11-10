@@ -12,6 +12,7 @@ export const noteService = {
     getEmptyNote,
     putReview,
     getNextNoteId,
+    saveAll,
 }
 
 _createNotes()
@@ -48,6 +49,10 @@ function putReview(review, noteId) {
     })
 }
 
+function saveAll(notes){
+    utilService.saveToStorage(NOTE_KEY, notes)
+}
+
 function save(note) {
     console.log(note);
     if (note.id) return storageService.put(NOTE_KEY, note)
@@ -66,7 +71,7 @@ function _createNotes() {
             {
                 id: "n101",
                 type: "note-txt",
-                isPinned: true,
+                isPinned: false,
                 info: {
                     txt: "Fullstack Me Baby!"
                 },
