@@ -3,9 +3,24 @@
   align-items: center;
   justify-content: space-between;
   height: 10vh;
-  background-color: var(--clr5);
+  background-color: #2f2f2f;
   color: var(--secondary-clr1);
   padding: 1em;
+}
+
+.app-header h1{
+  font-size: 2.5em;
+}
+
+.app-header button{
+width: 40px;
+height: 40px;
+background-color: inherit;
+border: none;
+}
+
+.app-header img{
+  width: 30px;
 }
 
 @media(max-width: 720px) {

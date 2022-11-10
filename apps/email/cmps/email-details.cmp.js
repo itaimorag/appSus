@@ -40,7 +40,7 @@ export default {
             }
         },
         formattedTime(){
-            console.log(this.email.sentAt);
+            console.log('hi');
            return new Date(this.email.sentAt)
         },
         reply() {
