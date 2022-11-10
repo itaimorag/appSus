@@ -3,7 +3,7 @@ import { emailService } from '../services/email.service.js'
 import { showSuccessMsg } from '../../../services/event-bus.service.js';
 
 export default {
-    emits:['replied', 'removed'],
+    emits:['replied', 'removed', 'drafted'],
     props: ['email'],
     template: `
     <section @mouseleave="mouseOver(email, false)" @mouseover="mouseOver(email, true)" @click="emailSelect(email)" :class="checkIfRead(email)" class="email-preview">
@@ -57,7 +57,9 @@ export default {
         starEmail(val) {
             this.email.isStared = val
             emailService.save(this.email)
-            showSuccessMsg('Email Stared')
+            if(val)   showSuccessMsg('Email Stared')
+            else    showSuccessMsg('Email Unstared')
+         
         },
         removed(emaiId){
             console.log(emaiId);

@@ -2,7 +2,7 @@ import emailPreview from './email-preview.cmp.js'
 
 
 export default {
-    emits:['replied', 'removed'],
+    emits:['replied', 'removed', 'drafted'],
     props: ['emails'],
     template: `
 <section class="email-list">
