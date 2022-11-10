@@ -2,6 +2,7 @@ import emailDetails from './email-details.cmp.js'
 import { emailService } from '../services/email.service.js'
 
 export default {
+    emits:['replied'],
     props: ['email'],
     template: `
     <section @mouseleave="mouseOver(email, false)" @mouseover="mouseOver(email, true)" @click="emailSelect(email)" :class="checkIfRead(email)" class="email-preview">
@@ -11,8 +12,8 @@ export default {
             <p class="bolded">To: {{substringReceiver}}</p>
         <p class="bold">{{ email.subject }}</p>
         <p class="body">{{ substringBody }}</p>
-        <div v-if="email.isHovered && !email.isRead"  @click.stop="changeIsRead(email, false)"><i class="fa fa-envelope-o"></i></div>
-        <div v-if="email.isHovered && email.isRead"  @click.stop="changeIsRead(email, true)"><i class="fa fa-envelope-open-o"></i></div>
+        <div v-if="email.isHovered && !email.isRead"  @click.stop="changeIsRead(email, true)"><i class="fa fa-envelope-o"></i></div>
+        <div v-if="email.isHovered && email.isRead"  @click.stop="changeIsRead(email, false)"><i class="fa fa-envelope-open-o"></i></div>
         <div v-if="email.isHovered" @click.stop="draftEmail(true)"><i class="fa fa-archive"></i></div>
         <p v-if="!email.isHovered">{{formattedSentAt}}</p>
     </section>
@@ -26,13 +27,16 @@ export default {
     },
     methods: {
         changeIsRead(email, val){
+            console.log(val);
+            console.log(email.isRead);
             email.isRead = val
         },
         mouseOver(email, val){
             email.isHovered = val
         },
         draftEmail(email) {
-
+            // email.isDraft = true
+            // emailService.save(email)
         },
         emailSelect(email) {
             email.isRead = true

@@ -4,6 +4,7 @@ import { showSuccessMsg } from '../../../services/event-bus.service.js';
 
 export default {
     props: ['email'],
+    emits:['replied'],
     template: `
     <section className="details-section">
         <div className="subject">
