@@ -5,4 +5,7 @@ export default {
         <p>{{ note.info.txt }}</p>
     </section>
 `,
+created() {
+   console.log(`foo = `, this.note)
+},
 };

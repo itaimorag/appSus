@@ -11,7 +11,7 @@ export default {
             <ul class="notes-list-ul">
                 <li v-for="note in notes" :key="note.id" class="note" :style="{backgroundColor:note.style.backgroundColor}">
                     <note-preview-pinned :note="note"/>
-                    <note-preview-notPinned :note="note"/>
+                    <note-preview-notpinned :note="note"/>
 
                     <section class="actions-note-item">
                         <button @click="remove(note.id)">x</button>
