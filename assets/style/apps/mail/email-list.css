@@ -1,6 +1,6 @@
 .email-list{
+    height: 63vh;
     overflow-y: scroll;
-    height: 80%;
 }
 .email-list li{
     list-style-type: none;
@@ -11,4 +11,12 @@
 
 .email-list ul{
     padding: 0;
+}
+
+@media (min-width:600px){
+
+    .email-list{
+        height: 80%;
+    }
+    
 }

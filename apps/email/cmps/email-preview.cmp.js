@@ -14,7 +14,7 @@ export default {
         <p class="body">{{ substringBody }}</p>
         <div v-if="email.isHovered && !email.isRead"  @click.stop="changeIsRead(email, true)"><i class="fa fa-envelope-o"></i></div>
         <div v-if="email.isHovered && email.isRead"  @click.stop="changeIsRead(email, false)"><i class="fa fa-envelope-open-o"></i></div>
-        <div v-if="email.isHovered" @click.stop="draftEmail(true)"><i class="fa fa-archive"></i></div>
+        <div v-if="email.isHovered" @click.stop="draftEmail(email, true)"><i class="fa fa-archive"></i></div>
         <p v-if="!email.isHovered">{{formattedSentAt}}</p>
     </section>
     <email-details @removed="" @replied="reply" :email="selectedEmail" v-if="isEmailOpen" />
@@ -27,16 +27,14 @@ export default {
     },
     methods: {
         changeIsRead(email, val){
-            console.log(val);
-            console.log(email.isRead);
             email.isRead = val
         },
         mouseOver(email, val){
             email.isHovered = val
         },
-        draftEmail(email) {
-            // email.isDraft = true
-            // emailService.save(email)
+        draftEmail(email, val) {
+            email.isDraft = val
+            emailService.save(email)
         },
         emailSelect(email) {
             email.isRead = true
@@ -49,7 +47,6 @@ export default {
             return 'read'
         },
         reply(from) {
-            console.log(from);
             this.$emit('replied', from)
         },
         starEmail(val) {
@@ -59,7 +56,6 @@ export default {
     },
     computed: {
         substringSender() {
-            console.log(this.email.from,);
             if (this.email.from === emailService.getLoggedInUser().email) return 'You'
             let string = this.email.from
             let split = string.split("@");
@@ -67,7 +63,6 @@ export default {
             return value
         },
         substringReceiver() {
-            console.log(this.email.to,);
             if (this.email.to === emailService.getLoggedInUser().email) return 'You'
             let string = this.email.to
             let split = string.split("@");

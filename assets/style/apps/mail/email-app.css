@@ -1,0 +1,17 @@
+
+
+
+
+
+
+
+.flex{
+    flex-direction: column;
+}
+
+
+@media (min-width: 600px){
+    .flex{
+        flex-direction: row;
+    }
+}

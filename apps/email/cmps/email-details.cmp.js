@@ -15,7 +15,7 @@ export default {
             </div>
         </div>
         <div className="body">
-            <h3>{{ email.body }}</h3>
+            <h4>{{ email.body }}</h4>
         </div>
         <div className="from">
             <p> From: {{ email.from }}</p>

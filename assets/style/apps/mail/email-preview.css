@@ -7,6 +7,7 @@
     line-height: 50px;
     text-align: left;
     padding-inline: 15px;
+    overflow: hidden;
     
 }
 
@@ -17,6 +18,7 @@
 
 .email-preview .bolded{
     min-width: 15%;
+    overflow: hidden;
 }
 
 .email-preview .body{
@@ -36,6 +38,6 @@ width: 42%;
     margin-inline-end: 20px;
 }
 
-.fa-envelope-o, .fa-envelope-open-o{
-    margin: 5pxF;
+.email-preview .fa-envelope-o, .fa-envelope-open-o{
+    margin: 5px;
 }
