@@ -31,4 +31,8 @@
 
 /* Note-cmps */
 
-@import 'apps/note/note-app.css'
+@import 'apps/note/note-app.css';
+@import 'apps/note/add-note.css';
+@import 'apps/note/note-filter.css';
+@import 'apps/note/note-list.css';
+@import 'apps/note/note-preview.css';
