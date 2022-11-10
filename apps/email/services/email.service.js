@@ -48,13 +48,13 @@ function query(criteria) {
                     return emails.filter(email => email.to === loggedinUser.email && email.status !== 'trash')
 
                 case 'sent':
-                    return emails.filter(email => email.from === loggedinUser.email)
+                    return emails.filter(email => email.from === loggedinUser.email && email.status !== 'trash')
 
                 case 'trash':
                     return emails.filter(email => email.status === 'trash')
 
                 case 'draft':
-                    return emails.filter(email => email.isDraft === true)
+                    return emails.filter(email => email.isDraft === true && email.status !== 'trash')
 
 
             }
@@ -201,6 +201,26 @@ function _createEmails() {
                     sentAt: 154845612,
                     from: 'user@appsus.com',
                     to: 'linkedin@gmail.com'
+
+                },
+                {
+                    id: utilService.makeId(),
+                    subject: 'היי , נובמבר חם בסופר-פארם אנחנו מזמינים אותך ליהנות ממגוון רחב של מבצעי ענק במסגרת Shopping IL | פרסומת',
+                    body: 'נייה זו נעשית בדיוור ישיר בהסתמך על מידע מתוך מאגר מידע שבבעלות סופר-פארם (ישראל) בע"מ שמספרו 700061112, או כל מאגר מידע אחר שבבעלות החברה, בהתאם למדיניות הפרטיות של סופר-פארם. בכל עת, ניתן לבקש את הסרתך מרשימת התפוצה המשמשת למשלוח מידע שיווקי בפניה לשירות הלקוחות במייל NLcustomers@Super-Pharm.co.il או ע"י השבה למייל זה.',
+                    isRead: true,
+                    sentAt: 141514846,
+                    from: 'superPharm@gmail.com',
+                    to: 'user@appsus.com'
+
+                },
+                {
+                    id: utilService.makeId(),
+                    subject: 'היי , נובמבר חם בסופר-פארם אנחנו מזמינים אותך ליהנות ממגוון רחב של מבצעי ענק במסגרת Shopping IL | פרסומת',
+                    body: 'נייה זו נעשית בדיוור ישיר בהסתמך על מידע מתוך מאגר מידע שבבעלות סופר-פארם (ישראל) בע"מ שמספרו 700061112, או כל מאגר מידע אחר שבבעלות החברה, בהתאם למדיניות הפרטיות של סופר-פארם. בכל עת, ניתן לבקש את הסרתך מרשימת התפוצה המשמשת למשלוח מידע שיווקי בפניה לשירות הלקוחות במייל NLcustomers@Super-Pharm.co.il או ע"י השבה למייל זה.',
+                    isRead: true,
+                    sentAt: 141514846,
+                    from: 'superPharm@gmail.com',
+                    to: 'user@appsus.com'
 
                 },
             ]

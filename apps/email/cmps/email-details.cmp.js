@@ -4,7 +4,7 @@ import { showSuccessMsg } from '../../../services/event-bus.service.js';
 
 export default {
     props: ['email'],
-    emits:['replied'],
+    emits: ['replied'],
     template: `
     <section className="details-section">
         <div className="subject">
@@ -24,19 +24,19 @@ export default {
     `,
     methods: {
         trashEmail(email) {
-            if (email.status) {
-                emailService.remove(email.id)
-                .then(email=>{
-                    this.$emit('removed', email.id)
-                })
-                
+            if (email.status !== 'trash') {
+                email.status = 'trash'
+                emailService.save(email)
+                this.$emit('removed', email.id)
             }
-            else email.status = 'trash'
-            showSuccessMsg('Item removed')
-            emailService.save(email)
-            // this.$emit('reRender')
+            else {
+                confirm('Are you sure you want to delete?')
+                emailService.remove(email.id)
+                this.$emit('removed', email.id)
+                showSuccessMsg('Item removed')
+            }
         },
-        reply(){
+        reply() {
             this.$emit('replied', this.email.from)
         }
     },

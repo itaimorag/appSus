@@ -2,13 +2,13 @@ import emailPreview from './email-preview.cmp.js'
 
 
 export default {
-    emits:['replied'],
+    emits:['replied', 'removed', 'drafted'],
     props: ['emails'],
     template: `
 <section class="email-list">
     <ul>
         <li v-for="email in emails" :key="email.id">
-            <email-preview @removed="removed" @Replied="reply" :email="email"></email-preview>
+            <email-preview @drafted="drafted" @removed="removed" @Replied="reply" :email="email"></email-preview>
         </li>
     </ul>
 </section>
@@ -24,6 +24,9 @@ export default {
         },
         removed(emailId){
             this.$emit('removed', emailId)
+        },
+        drafted(emailId){
+            this.$emit('drafted', emailId)
         }
     },
     components: {
