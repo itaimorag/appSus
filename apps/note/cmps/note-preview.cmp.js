@@ -5,12 +5,14 @@ import noteVideo from './note-preview-video.cmp.js'
 
 
 export default {
-    props: ['note'],
+    props: ['note','hover'],
     template: `
         <section class="note-preview">     
                         <component :is="note.type"
                             :class="note.type"
-                            :note="note">
+                            :note="note"
+                            :hover="hover"
+                            >
                         </component>                       
                 </section>
     `,
