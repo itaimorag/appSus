@@ -18,6 +18,7 @@ margin-bottom: 10px;
 
 .add-note-inputs input{
     border: 1px solid #88888861;
+    outline: none;
     border-radius: 6px;
     width: 40%;
     padding: 10px;

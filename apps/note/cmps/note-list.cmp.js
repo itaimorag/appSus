@@ -9,16 +9,22 @@ export default {
     template: `
         <section class="note-list">
             <ul class="notes-list-ul">
-                <li v-for="note in notes" :key="note.id" class="note" :style="{backgroundColor:note.style.backgroundColor}">
-                    <note-preview :note="note"/>           
-                    <section class="actions-note-item">
-                        <button @click="remove(note.id)">x</button>
-                        <button @click="pin(note)">🧷</button>
-                        <button @click="duplicate(note)">dup</button>
-                        <label class="label-color-item">
-                            <input v-model="color" type="color" class="input-color-item" @input="changeColor(note.id)"/>                            
-                        </label>
-                    </section>
+                <li @mouseover="hover = true" @mouseleave="hover = false" v-for="note in notes" :key="note.id" class="note" :style="{backgroundColor:note.style.backgroundColor}">
+                    <note-preview :note="note" :hover="hoverPos"/>           
+                    <div class="action-note-container">
+                        <section v-if="hover" class="actions-note-item">
+                            <button @click="remove(note.id)"><i class="fa fa-trash-o"></i></button>
+                            <div @click="pin(note)" class="pin-button">
+                                <i class="fa fa-star-o" v-if="!note.isPinned"></i>
+                                <span v-else>⭐</span>                       
+                            </div>
+                            <button @click="duplicate(note)"><i class="fa fa-clone"></i></button>
+                            <label class="label-color-item">
+                                <i class="fa fa-paint-brush"></i>
+                                <input v-model="color" type="color" class="input-color-item" @input="changeColor(note.id)"/>                            
+                            </label>
+                        </section>
+                    </div>
                 </li>
             </ul>
 
@@ -26,10 +32,10 @@ export default {
 
         </section>
     `,
-    data(){
+    data() {
         return {
             color: '#f16a81',
-
+            hover: true,
         }
     },
     methods: {
@@ -40,10 +46,15 @@ export default {
             this.$emit('pin', note)
         },
         changeColor(noteId,) {
-            this.$emit('changeColor', noteId,this.color)
+            this.$emit('changeColor', noteId, this.color)
         },
-        duplicate(note){
+        duplicate(note) {
             this.$emit('duplicate', note)
+        }
+    },
+    computed: {
+        hoverPos(){
+            this.hover
         }
     },
     components: {

@@ -1,1 +1,54 @@
 /* dasd */
+
+
+.pin-button{
+   position: relative;
+
+}
+.label-color-item{
+    position: relative;
+}
+
+.actions-note-item{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.actions-note-item > *{
+    border-radius: 50%;
+    border: none;
+    width: 30px;
+    height: 30px;
+}
+
+.fa-star-o:before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%)
+}
+
+.fa-paint-brush:before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%)
+}
+
+.actions-note-item > *:hover{
+    background-color: rgba(128, 128, 128, 0.885);
+}
+
+.input-color-item{
+    visibility: hidden;
+}
+
+.action-note-container{
+    margin-top: 10px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

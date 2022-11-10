@@ -17,6 +17,7 @@
 .text-filter input{
     border: none;
     font-size: 15px;
+    outline: none;
     background-color: rgba(128, 128, 128, 0);
 } 
 .text-filter button{

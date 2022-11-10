@@ -8,3 +8,12 @@
     list-style: none;
     display: contents;
 }
+
+.todo-remove-btn{
+    border-radius: 50%;
+    border: none;
+}
+
+.todo-remove-btn:hover{
+  background-color: rgba(128, 128, 128, 0.491);
+}

@@ -5,10 +5,12 @@
 }
 .note-app-page{
     height: 80vh;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 .notes-list-ul{
-    columns: 150px;
+    columns: 200px;
     column-gap: 2em;
     list-style-type: none;
     padding: 0;
