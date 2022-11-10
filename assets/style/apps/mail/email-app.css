@@ -1,17 +1,13 @@
 
 
 
-
-
-
-
-.flex{
+.flexed{
     flex-direction: column;
 }
 
 
 @media (min-width: 600px){
-    .flex{
+    .flexed{
         flex-direction: row;
     }
 }
