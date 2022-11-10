@@ -8,6 +8,7 @@
     right: 5vh;
     height: 55%;
     width: 35%;
+    min-width: 320px;
     border-radius: 30px;
     box-shadow: 1px -14px 47px -17px rgba(0,0,0,0.46);
 }

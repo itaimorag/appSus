@@ -1,5 +1,5 @@
 .email-filter{
-    height: 12vh;
+    height: 8vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -7,10 +7,21 @@
 }
 
 .email-filter input{
-    width: 50%;
-    height: 40%;
+    width: 70%;
+    height: 60%;
     border-radius: 10px;
     background-color: #EAF1FB;
     border: none;
     outline: none;
+}
+
+@media (min-width:600px){
+    .email-filter{
+        height: 20vh;
+    }
+
+    .email-filter input{
+        width: 50%;
+        height: 28%;
+    }
 }

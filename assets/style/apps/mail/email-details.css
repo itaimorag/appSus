@@ -1,5 +1,5 @@
 .details-section{
-    padding: 30px;
+    padding: 7px;
    border-bottom:  0.8px solid #ECEFF1;
    color: #181818;
    cursor: auto;
@@ -15,6 +15,10 @@
     align-items: center;
     margin-bottom: 20px;
 
+}
+
+.from p{
+    margin-inline-end: 5px;
 }
 
 .details-section .body{
@@ -43,5 +47,16 @@
 .details-section button:hover{
 background-color: #e6e6e6;
 scale: 1.1;
+}
+
+@media (min-width:600px) {
+    .details-section{
+        padding: 30px;
+      
+    }
+
+    .btns{
+        display: flex;
+    }
 }
     
