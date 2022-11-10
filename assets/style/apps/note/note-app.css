@@ -35,3 +35,19 @@
     height: 20px;
     width: 20px;
 }
+
+.todo-remove-btn{
+    min-width: 20px;
+    min-height: 20px;
+}
+.todos-ul{
+    display: table-cell;
+    gap: 10px;
+}
+.next-todo-input{
+    width: 100%;
+}
+
+.todo-li{
+    margin: 10px auto;
+}
