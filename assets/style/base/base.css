@@ -65,6 +65,7 @@ button {
   display: flex;
   flex-direction: column;
 }
+
 .flex{
   display: flex;
 }
