@@ -17,6 +17,9 @@ export default {
         <div className="body">
             <h4>{{ email.body }}</h4>
         </div>
+        <div className="time">
+            <p> Sent at: {{ formattedTime }}</p>
+        </div>
         <div className="from">
             <p> From: {{ email.from }}</p>
         </div>
@@ -35,6 +38,10 @@ export default {
                 this.$emit('removed', email.id)
                 showSuccessMsg('Item removed')
             }
+        },
+        formattedTime(){
+            console.log(this.email.sentAt);
+           return new Date(this.email.sentAt)
         },
         reply() {
             this.$emit('replied', this.email.from)
