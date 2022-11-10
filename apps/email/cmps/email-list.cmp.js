@@ -7,7 +7,7 @@ export default {
 <section class="email-list">
     <ul>
         <li v-for="email in emails" :key="email.id">
-            <email-preview @rerender="$emit('reRender')" @renderMsg="onRenderMsg" :email="email"></email-preview>
+            <email-preview @Replied="reply" :email="email"></email-preview>
         </li>
     </ul>
 </section>
@@ -18,10 +18,9 @@ export default {
         }
     },
     methods: {
-        onRenderMsg(email){
-            this.selectedEmail = email
-            console.log(email);
-        },
+        reply(from){
+            this.$emit('replied', from)
+        }
     },
     components: {
         emailPreview,

@@ -11,11 +11,16 @@ export const emailService = {
     get,
     getEmptyEmail,
     getNextEmailId,
+    getLoggedInUser,
 }
 
 const loggedinUser = {
     email: 'user@appsus.com',
     fullname: 'Mahatma Appsus'
+}
+
+function getLoggedInUser(){
+    return loggedinUser
 }
 
 
@@ -50,7 +55,6 @@ function query(criteria) {
 
                 case 'draft':
                     return emails.filter(email => email.isDraft === true)
-
 
 
             }
@@ -137,7 +141,27 @@ function _createEmails() {
                     from: 'cult@momo.com',
                     to: 'user@appsus.com'
 
-                }
+                },
+                {
+                    id: utilService.makeId(),
+                    subject: 'Hi , how  are you? ',
+                    body: 'I wanted to know about my grades at the test yesterday',
+                    isRead: true,
+                    sentAt: 1197652430,
+                    from: 'user@appsus.com',
+                    to: 'Teacher@momo.com'
+
+                },
+                {
+                    id: utilService.makeId(),
+                    subject: 'Ive been at Omer`s',
+                    body: 'I was trying to call you back but you didnt answer',
+                    isRead: false,
+                    sentAt: 1152154789,
+                    from: 'user@appsus.com',
+                    to: 'facebook@momo.com'
+
+                },
             ]
         utilService.saveToStorage(EMAIL_KEY, emails)
     }
