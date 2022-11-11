@@ -10,6 +10,7 @@ export default {
         <div className="subject">
             <h2>{{email.subject}}</h2>
             <div className="btns">
+                <button @click.prevent.stop="transferData"><i class="fa fa-sticky-note-o" style="font-size:24px"></i></button>
                 <button @click="reply"><i class="fa fa-mail-reply" style="font-size:24px"></i></button>
                 <button @click="trashEmail(email)"><i class="fa fa-trash-o" style="font-size:28px"></i></button>
             </div>
@@ -39,6 +40,12 @@ export default {
                 showSuccessMsg('Item removed')
             }
         },
+        transferData(){
+            const { body , subject } = this.email
+            const note = {body, subject}
+            const stringify = JSON.stringify(note)
+             this.$router.push("/noteApp/" + stringify)   
+        },
 
         reply() {
             this.$emit('replied', this.email.from)
@@ -49,5 +56,7 @@ export default {
             console.log('hi');
            return new Date(this.email.sentAt)
         },
+
     },
+
 }

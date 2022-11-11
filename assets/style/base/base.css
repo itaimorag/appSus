@@ -61,6 +61,10 @@ button {
   height: 100%;
 }
 
+.hidden{
+  display: none;
+}
+
 #app{
   display: flex;
   flex-direction: column;

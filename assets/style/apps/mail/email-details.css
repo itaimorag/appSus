@@ -35,7 +35,7 @@
     color: #181818;
 }
 
-.details-section button{
+.details-section button , .details-section .button{
     background-color: transparent;
     border: none;
     margin-inline: 3px;

@@ -23,7 +23,7 @@ const routerOptions = {
 			component: aboutPage,
 		},
 		{
-			path: '/noteApp',
+			path: '/noteApp/:obj?',
 			component: noteAppPage,
 		},
 		{

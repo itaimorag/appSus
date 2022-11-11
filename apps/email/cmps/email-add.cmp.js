@@ -1,5 +1,7 @@
 import { emailService } from "../services/email.service.js";
 
+
+
 export default {
     props: ['from'],
     template: `
@@ -21,6 +23,10 @@ export default {
                 placeholder="Enter youre email content here" rows="10"></textarea>
             </div>
             <div className="buttons">
+
+            <label for="files"><i class="fa fa-image" style="font-size:18px"></i>
+            <input type="file" id="files" class="hidden"/>
+            </label>
                 <button class="line"><i class="fa fa-file-image-o" style="font-size:18px"></i></button>
                 <button class="line"><i class="fa fa-file-excel-o" style="font-size:18px"></i></button>
                 <button class="line"><i class="fa fa-image" style="font-size:18px"></i></button>
@@ -52,6 +58,11 @@ export default {
             emailService.save(this.writtenEmail)
             console.log(this.writtenEmail);
             this.$emit('closeMsg')
+        },
+        openEmojis() {
+            const button = document.querySelector('.emoji-button');
+            const picker = new EmojiButton()
+            picker.togglePicker(button)
         }
 
     },

@@ -47,7 +47,7 @@ export default {
                 })
         },
         pinNote(currdNote) {
-            const idx = this.notes.findIndex(note =>note.id === currdNote.id)
+            const idx = this.notes.findIndex(note => note.id === currdNote.id)
             currdNote.isPinned = !currdNote.isPinned
             this.notes.splice(idx, 1)
             if (!currdNote.isPinned) this.notes.push(currdNote)
@@ -67,17 +67,25 @@ export default {
             this.notes.push(newNote)
         },
         duplicate(note) {
-            var newNote=JSON.parse(JSON.stringify(note));
+            var newNote = JSON.parse(JSON.stringify(note));
             newNote.id = null
-            newNote.isPinned=false
+            newNote.isPinned = false
             noteService.save(newNote)
-            .then(newNote => {
-                this.notes.push(newNote)
-            })
+                .then(newNote => {
+                    this.notes.push(newNote)
+                })
         },
         filter(filterBy) {
             this.filterBy = filterBy
-        }
+        },
+        loadNote() {
+            console.log("loading");
+            // console.log(this.$route.params.obj);
+            // const note = JSON.parse(this.$route.params.obj);
+            // console.log(note);
+            // this.email.subject = note.subject;
+            // this.email.body = note.body;
+        },
     },
 
     computed: {
@@ -91,6 +99,18 @@ export default {
             })
 
         },
+        obj() {
+            return this.$route.params.obj
+        }
+    },
+    watch: {
+        obj() {
+            // this.$route.params.obj;
+            // if (!this.$route.params.obj) return
+            console.log(this.$route.params.obj);
+            // this.loadNote()
+
+        }
     },
     components: {
         noteList,
