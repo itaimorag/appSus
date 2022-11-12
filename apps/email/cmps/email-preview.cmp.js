@@ -62,7 +62,6 @@ export default {
          
         },
         removed(emaiId){
-            console.log(emaiId);
             this.$emit('removed', emaiId)
         },
         trashEmail(email) {

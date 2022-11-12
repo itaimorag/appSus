@@ -81,7 +81,6 @@ function getEmptyEmail() {
 function _createEmails() {
     let emails = utilService.loadFromStorage(EMAIL_KEY)
     if (!emails || !emails.length) {
-        console.log('hi');
         emails =
             [
                 {

@@ -21,7 +21,6 @@ export const booksService = {
 function getGoogleBooks(val) {
   return axios.get(`https://www.googleapis.com/books/v1/volumes?printType=books&q=${val}`)
     .then(res => {
-      console.log(res.data);
       return res.data
     })
 }
@@ -71,7 +70,6 @@ function addGoogleBook(book) {
 
 
 function save(book) {
-  console.log(book);
   if (book.id) return storageService.put(BOOKS_KEY, book)
   else return storageService.post(BOOKS_KEY, book)
 }

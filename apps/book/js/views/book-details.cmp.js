@@ -53,7 +53,6 @@ export default {
                 })
         },
         closed() {
-            console.log('ok');
             this.isReview = false
             this.renderReviews = false
         },
