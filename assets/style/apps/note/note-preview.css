@@ -3,6 +3,7 @@
 .note-preview h2{
     text-align: center;
     font-family: calistoga;
+    margin-bottom: 20px;
 }
 
 .note-preview .todos-ul{

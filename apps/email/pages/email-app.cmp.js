@@ -11,7 +11,7 @@ export default {
         <email-navbar @filter="filterCreteria" @newEmail="newEmailRender" />
         <div className="flex-col" >
             <email-filter @filter="setFilter" />
-            <email-list @drafted="drafted" @removed="removed" @replied="reply" v-if="emails" :emails="emailsToShow" />
+            <email-list @openDraft="openDraft" @drafted="drafted" @removed="removed" @replied="reply" v-if="emails" :emails="emailsToShow" />
         </div>
         <email-add :noteEmail="getnoteEmail" :from="from" v-if="isNewEmail" @closeMsg="closeEmail"/>
     </div>
@@ -44,6 +44,11 @@ export default {
         }
     },
     methods: {
+        openDraft(email){
+            this.isNewEmail = true;
+            this.noteEmail = email
+            console.log(email);
+        },
         setFilter(filterBy) {
             this.filterBy = filterBy
         },

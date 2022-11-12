@@ -110,6 +110,17 @@ button.line{
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    padding-inline: 5px;
+    border-radius: 50%;
+}
+
+.add-email .buttons > *{
+    margin: 10px;
+    cursor: pointer;
+}
+
+.add-email .buttons > *:hover{
+   color: black;
 }
 
 .add-email button{

@@ -3,7 +3,7 @@ import { emailService } from '../services/email.service.js'
 import { showSuccessMsg } from '../../../services/event-bus.service.js';
 
 export default {
-    emits:['replied', 'removed', 'drafted'],
+    emits:['replied', 'removed', 'drafted', 'openDraft'],
     props: ['email'],
     template: `
     <section @mouseleave="mouseOver(email, false)" @mouseover="mouseOver(email, true)" @click="emailSelect(email)" :class="checkIfRead(email)" class="email-preview">
@@ -17,7 +17,7 @@ export default {
         <div v-if="email.isHovered && email.isRead"  @click.stop="changeIsRead(email, false)"><i class="fa fa-envelope-open-o"></i></div>
         <div v-if="email.isHovered" @click.stop="draftEmail(email, true)"><i class="fa fa-archive"></i></div>
         <div v-if="email.isHovered" @click.stop="trashEmail(email)"><i class="fa fa-trash"></i></div>
-        <p v-if="!email.isHovered">{{formattedSentAt}}</p>
+        <p class="date" v-if="!email.isHovered">{{formattedSentAt}}</p>
     </section>
     <email-details @removed="removed" @replied="reply" :email="selectedEmail" v-if="isEmailOpen" />
     `,
@@ -43,6 +43,9 @@ export default {
         },
         emailSelect(email) {
             email.isRead = true
+            if(email.isDraft && email.status !== 'trash'){
+                this.$emit('openDraft', email)
+            }
             this.selectedEmail = email
             this.isEmailOpen = !this.isEmailOpen
             emailService.save(email)
@@ -95,13 +98,12 @@ export default {
             return value
         },
         formattedSentAt() {
-            let currDay = new Date().getDay()
-            let currMonth = new Date().getMonth()
-            let seen = this.email.sentAt
-            let datedFormat = new Date(seen)
-            if (datedFormat.getDay() === currDay && datedFormat.getMonth() === currMonth) return datedFormat.getHours() + ":" + datedFormat.getMinutes()
+            var options = { day: "numeric", month: "short" };
+            var date = new Date(this.email.sentAt)
+            if(date.getDay() === new Date(Date.now()).getDay() && date.getMonth() === new Date(Date.now()).getMonth() && date.getFullYear() === new Date(Date.now()).getFullYear()) return date.getHours() +':' + date.getMinutes()
+            //prettier-ignore
+            return new Date(this.email.sentAt).toLocaleDateString("en-US", options);
 
-            else  return datedFormat.getDay() + '/' + (datedFormat.getMonth() + 1)
 
         },
 

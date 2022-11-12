@@ -11,6 +11,10 @@
     
 }
 
+.email-preview .date{
+    min-width: 60px;
+}
+
 .email-preview button{
     background-color: inherit;
     border: none;

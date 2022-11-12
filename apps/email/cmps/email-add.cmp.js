@@ -28,9 +28,9 @@ export default {
             <label for="files"><i class="fa fa-image" style="font-size:18px"></i>
             <input type="file" id="files" class="hidden"/>
             </label>
-                <button class="line"><i class="fa fa-file-image-o" style="font-size:18px"></i></button>
-                <button class="line"><i class="fa fa-file-excel-o" style="font-size:18px"></i></button>
-                <button class="line"><i class="fa fa-image" style="font-size:18px"></i></button>
+            <label for="files"><i class="fa fa-file-excel-o" style="font-size:18px"></i>
+            <input type="file" id="files" class="hidden"/>
+            </label>
                 <button @click="sendEmail"><i class="fa fa-send send-btn" style="font-size:24px"></i></button>
             </div>
                 <button class="close-btn" @click="$emit('closeMsg')">X</button>
@@ -51,7 +51,7 @@ export default {
     },
     created() {
         if (this.noteEmail) {
-            if(this.noteEmail.subject)this.writtenEmail.subject = this.noteEmail.subject
+            if (this.noteEmail.subject) this.writtenEmail.subject = this.noteEmail.subject
             this.writtenEmail.body = this.noteEmail.body
             this.$router.push('/emailApp')
         }
@@ -59,6 +59,7 @@ export default {
     },
     methods: {
         sendEmail() {
+            if (this.noteEmail.id) this.noteEmail.id = this.writtenEmail.id
             if (this.from) this.writtenEmail.to = this.from
             emailService.save(this.writtenEmail)
             showSuccessMsg('Your email was sent')

@@ -6,6 +6,10 @@
    background-color: #F2F6FC;
 }
 
+.details-section h4{
+max-width: 800px;
+}
+
 .details-section >*{
     margin: 10px;
 }
