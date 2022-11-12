@@ -108,6 +108,30 @@ function _createNotes() {
                 }
             },
             {
+                id: "n111",
+                type: "note-img",
+                isPinned: false,
+                info: {
+                    url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
+                    title: "Bobi and Me"
+                },
+                style: {
+                    backgroundColor: "#4b2b2b13"
+                }
+            },
+            {
+                id: "n113",
+                type: "note-video",
+                isPinned: false,
+                info: {
+                    url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+                    title: "Bobi and Me"
+                },
+                style: {
+                    backgroundColor: "#4b2b2b13"
+                }
+            },
+            {
                 id: "n106",
                 type: "note-txt",
                 isPinned: false,

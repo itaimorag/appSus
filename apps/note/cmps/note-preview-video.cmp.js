@@ -8,8 +8,7 @@ export default {
     methods: {},
     computed: {
         videoSrcLink() {
-            let url = 'https://www.youtube.com/embed/' + this.note.info.video
-            return url
+            return this.note.info.url
         }
     }
 }
