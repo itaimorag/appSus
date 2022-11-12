@@ -96,10 +96,12 @@ export default {
         },
         formattedSentAt() {
             let currDay = new Date().getDay()
+            let currMonth = new Date().getMonth()
             let seen = this.email.sentAt
             let datedFormat = new Date(seen)
-            if (datedFormat.getDay() !== currDay) return datedFormat.getDay() + '/' + (datedFormat.getMonth() + 1)
-            else return datedFormat.getHours() + ":" + datedFormat.getMinutes()
+            if (datedFormat.getDay() === currDay && datedFormat.getMonth() === currMonth) return datedFormat.getHours() + ":" + datedFormat.getMinutes()
+
+            else  return datedFormat.getDay() + '/' + (datedFormat.getMonth() + 1)
 
         },
 
