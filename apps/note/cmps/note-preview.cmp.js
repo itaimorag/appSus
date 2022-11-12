@@ -21,6 +21,7 @@ export default {
                                 <span class="golden-star" v-else>⭐</span>                       
                             </div>
                             <button @click="duplicate(note)"><i class="fa fa-clone"></i></button>
+                            <button @click="transferData"><i class="fa fa-envelope-o"></i></button>
                             <label class="label-color-item">
                                 <i class="fa fa-paint-brush"></i>
                                 <input v-model="color" type="color" class="input-color-item" @input="changeColor(note.id)"/>                            
@@ -32,7 +33,7 @@ export default {
     data() {
         return {
             color: '#f16a81',
-            hover:false,
+            hover: false,
         }
     },
 
@@ -48,6 +49,35 @@ export default {
         },
         duplicate(note) {
             this.$emit('duplicate', note)
+        },
+        transferData() {
+            switch (this.note.type) {
+                case 'note-txt':
+                    var text = this.note.info.txt
+                    var note = { text, type: 'text' }
+                    break;
+                case 'note-todos':
+                    var text = this.note.info.label
+                    console.log(`text = `, text)
+                    var todos = this.note.info.todos
+                    var note = { text, todos, type: 'todos' }
+                    break;
+                case 'note-video':
+                    var text = this.note.info.title
+                    var url = this.note.info.url.substring(7,this.note.info.url.length)
+                    console.log(`text = `, url)
+                    var note = { text, url, type: 'imgVideo' }
+                    break;
+                case 'note-img':
+                    var text = this.note.info.title
+                    var url = this.note.info.url.substring(7,this.note.info.url.length)
+                    console.log(`text = `, url)
+                    var note = { text, url, type: 'imgVideo' }
+                    break;
+                    // this.note.info.url.substring(7,this.note.info.url.length)
+            }
+            const stringify = JSON.stringify(note)
+            this.$router.push("/emailApp/" + stringify)
         },
     },
     computed: {

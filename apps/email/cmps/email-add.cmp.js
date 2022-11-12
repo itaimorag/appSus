@@ -3,7 +3,7 @@ import { emailService } from "../services/email.service.js";
 
 
 export default {
-    props: ['from'],
+    props: ['from', 'noteEmail'],
     template: `
         <section className="add-email">
             <div className="new-email">
@@ -50,6 +50,11 @@ export default {
     },
     created() {
         // console.log(this.from);
+        if (this.noteEmail) {
+            if(this.noteEmail.subject)this.writtenEmail.subject = this.noteEmail.subject
+            this.writtenEmail.body = this.noteEmail.body
+        }
+
     },
     methods: {
         sendEmail() {

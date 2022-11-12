@@ -27,7 +27,7 @@ const routerOptions = {
 			component: noteAppPage,
 		},
 		{
-			path: '/emailApp',
+			path: '/emailApp/:obj?',
 			component: emailAppPage,
 		},
 		{
