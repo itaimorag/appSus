@@ -32,6 +32,11 @@ export default {
             .then(notes => {
                 this.notes = notes
             })
+
+        if (this.$route.params.obj){
+            this.loadNote()    
+        }
+
     },
     methods: {
         removeNote(noteId) {
@@ -80,11 +85,19 @@ export default {
         },
         loadNote() {
             console.log("loading");
-            // console.log(this.$route.params.obj);
-            // const note = JSON.parse(this.$route.params.obj);
-            // console.log(note);
-            // this.email.subject = note.subject;
-            // this.email.body = note.body;
+            console.log(this.$route.params.obj);
+            const note = JSON.parse(this.$route.params.obj);
+            console.log(note);
+            const newNote = { type: 'note-txt',  style: {
+                backgroundColor: "#4b2b2b13"
+            }, isPinned: false, info: {txt:`${note.subject} : ${note.body}`}}
+            noteService.save(newNote)
+                .then(newNote => {
+                    this.notes.push(newNote)
+                    this.$router.push(`/noteApp`)
+                })
+
+
         },
     },
 
@@ -99,18 +112,6 @@ export default {
             })
 
         },
-        obj() {
-            return this.$route.params.obj
-        }
-    },
-    watch: {
-        obj() {
-            // this.$route.params.obj;
-            // if (!this.$route.params.obj) return
-            console.log(this.$route.params.obj);
-            // this.loadNote()
-
-        }
     },
     components: {
         noteList,

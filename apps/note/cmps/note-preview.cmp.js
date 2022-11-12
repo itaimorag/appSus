@@ -35,6 +35,7 @@ export default {
             hover:false,
         }
     },
+
     methods: {
         pin(note) {
             this.$emit('pin', note)
@@ -47,8 +48,12 @@ export default {
         },
         duplicate(note) {
             this.$emit('duplicate', note)
-        }
+        },
     },
+    computed: {
+
+    },
+
     components: {
         noteTxt,
         noteImg,
