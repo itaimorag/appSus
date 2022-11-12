@@ -1,7 +1,7 @@
 export default {
     template: `
     <section @hover="addDelete" className="navbar-section">
-        <button @click="renderNewEmail" class="new-email-btn"><i class="fa fa-pencil" style="font-size:18px"></i>New email</button>
+        <button :class="" @click="renderNewEmail" class="new-email-btn"><i class="fa fa-pencil" style="font-size:18px"></i>New email</button>
         <button @click="changeCriteria('status', 'inbox')" class="income"><i class="fa fa-envelope-o"></i> Income mail</button>
         <button @click="changeCriteria('isStared', 'true')" class="income"><i class="fa fa-star-o"></i> Stared</button>
         <button @click="changeCriteria('status', 'sent')" class="income"> <i class="fa fa-send-o"></i> Sent</button>
