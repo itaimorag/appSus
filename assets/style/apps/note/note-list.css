@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+.notes-list-ul li.note{
+    box-shadow: 7px 7px 11px -4px rgba(0,0,0,0.24);
+}
+
 .notes-list-ul .note{
     padding: 1em;
     margin-bottom: 1.3em;
