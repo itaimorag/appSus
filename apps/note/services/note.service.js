@@ -76,7 +76,7 @@ function _createNotes() {
                     txt: "Fullstack Me Baby!"
                 },
                 style: {
-                    backgroundColor: "#4b2b2b13"
+                    backgroundColor: makeRandomColor()
                 }
 
             },
@@ -86,10 +86,10 @@ function _createNotes() {
                 isPinned: false,
                 info: {
                     url: "http://coding-academy.org/books-photos/20.jpg",
-                    title: "Bobi and Me"
+                    title: "Akarnae"
                 },
                 style: {
-                    backgroundColor: "#4b2b2b13"
+                    backgroundColor: makeRandomColor()
                 }
             },
             {
@@ -104,7 +104,7 @@ function _createNotes() {
                     ]
                 },
                 style: {
-                    backgroundColor: "#4b2b2b13"
+                    backgroundColor: makeRandomColor()
                 }
             },
             {
@@ -113,10 +113,10 @@ function _createNotes() {
                 isPinned: false,
                 info: {
                     url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
-                    title: "Bobi and Me"
+                    title: "For Bigger Blazes"
                 },
                 style: {
-                    backgroundColor: "#4b2b2b13"
+                    backgroundColor: makeRandomColor()
                 }
             },
             {
@@ -125,10 +125,10 @@ function _createNotes() {
                 isPinned: false,
                 info: {
                     url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-                    title: "Bobi and Me"
+                    title: "Elephants Dream"
                 },
                 style: {
-                    backgroundColor: "#4b2b2b13"
+                    backgroundColor: makeRandomColor()
                 }
             },
             {
@@ -139,7 +139,7 @@ function _createNotes() {
                     txt: "Hello Wrold!"
                 },
                 style: {
-                    backgroundColor: "#4b2b2b13"
+                    backgroundColor: makeRandomColor()
                 }
 
             },
@@ -155,7 +155,7 @@ function _createNotes() {
                     ]
                 },
                 style: {
-                    backgroundColor: "#4b2b2b13"
+                    backgroundColor: makeRandomColor()
                 }
             },
             {
@@ -164,10 +164,10 @@ function _createNotes() {
                 isPinned: false,
                 info: {
                     url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
-                    title: "Bobi and Me"
+                    title: "Big Buck Bunny"
                 },
                 style: {
-                    backgroundColor: "#4b2b2b13"
+                    backgroundColor: makeRandomColor()
                 }
             },
             {
@@ -184,7 +184,7 @@ function _createNotes() {
                     ]
                 },
                 style: {
-                    backgroundColor: "#4b2b2b13"
+                    backgroundColor: makeRandomColor()
                 }
             },
             {
@@ -201,7 +201,7 @@ function _createNotes() {
                     ]
                 },
                 style: {
-                    backgroundColor: "#4b2b2b13"
+                    backgroundColor: makeRandomColor()
                 }
             },
             {
@@ -213,7 +213,7 @@ function _createNotes() {
                     title: "Bobi and Me"
                 },
                 style: {
-                    backgroundColor: "#4b2b2b13"
+                    backgroundColor: makeRandomColor()
                 }
             },
             
