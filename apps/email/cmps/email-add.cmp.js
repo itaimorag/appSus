@@ -1,4 +1,5 @@
 import { emailService } from "../services/email.service.js";
+import { showSuccessMsg } from '../../../services/event-bus.service.js';
 
 
 
@@ -60,6 +61,7 @@ export default {
         sendEmail() {
             if (this.from) this.writtenEmail.to = this.from
             emailService.save(this.writtenEmail)
+            showSuccessMsg('Your email was sent')
             this.$emit('closeMsg')
         },
         openEmojis() {

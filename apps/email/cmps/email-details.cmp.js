@@ -53,7 +53,6 @@ export default {
     },
     computed: {
         formattedTime(){
-            console.log('hi');
            return new Date(this.email.sentAt)
         },
 

@@ -33,9 +33,6 @@ export default {
         setFilter(filterBy) {
             this.filterBy = filterBy
         },
-        log(){
-            console.log('hi');
-        }
 
     },
 
