@@ -13,7 +13,7 @@ export default {
             <email-filter @filter="setFilter" />
             <email-list @drafted="drafted" @removed="removed" @replied="reply" v-if="emails" :emails="emailsToShow" />
         </div>
-        <email-add :from="from" v-if="isNewEmail" @closeMsg="closeEmail"/>
+        <email-add :noteEmail="getnoteEmail" :from="from" v-if="isNewEmail" @closeMsg="closeEmail"/>
     </div>
     `,
     data() {
@@ -28,7 +28,8 @@ export default {
                 isRead: null,
                 isStared: null,
                 lables: []
-            }
+            },
+            noteEmail:null
         }
     },
     created() {
@@ -36,6 +37,11 @@ export default {
             .then(emails => {
                 this.emails = emails
             })
+            
+        if (this.$route.params.obj){
+            this.loadEmail()    
+            this.isNewEmail=true
+        }
     },
     methods: {
         setFilter(filterBy) {
@@ -75,7 +81,27 @@ export default {
       drafted(emailId){
         const idx =  this.emails.findIndex(email => email.id === emailId)
         this.emails.splice(idx,1)
-      }
+      },
+      loadEmail() {
+        console.log("loading");
+        console.log(this.$route.params.obj);
+        const email = JSON.parse(this.$route.params.obj);
+        console.log(email);
+        switch(email.type) {
+            case 'text':
+                var newEmail ={body:email.text}
+              break;
+            case 'todos':
+                var newEmail ={subject:email.text,body:email.todos.txt} 
+              break;
+              case 'imgVideo':
+                var newEmail ={subject:email.text,body:email.url} 
+                break;
+          }
+          
+          this.noteEmail=newEmail
+          console.log(`this.noteEmail = `, this.noteEmail)
+    },
     },
 
     computed: {
@@ -83,6 +109,10 @@ export default {
             const regex = new RegExp(this.filterBy.title, 'i')
             return this.emails.filter(email => (regex.test(email.subject) || regex.test(email.from) || regex.test(email.body)))
         },
+        getnoteEmail(){
+            console.log(`foo = `, this.noteEmail)
+            return this.noteEmail
+        }
     },
     components: {
         emailFilter,
