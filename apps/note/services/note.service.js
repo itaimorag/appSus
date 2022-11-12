@@ -109,6 +109,45 @@ function _createNotes() {
                 }
             },
             {
+                id: "n106",
+                type: "note-txt",
+                isPinned: false,
+                info: {
+                    txt: "Hello Wrold!"
+                },
+                style: {
+                    backgroundColor: "#4b2b2b13"
+                }
+
+            },
+            {
+                id: "n107",
+                type: "note-todos",
+                isPinned: false,
+                info: {
+                    label: "Get my stuff together",
+                    todos: [
+                        { txt: "Driving liscence", doneAt: null,isComplete:false },
+                        { txt: "Coding power", doneAt: 187111111,isComplete:false }
+                    ]
+                },
+                style: {
+                    backgroundColor: "#4b2b2b13"
+                }
+            },
+            {
+                id: "n109",
+                type: "note-img",
+                isPinned: false,
+                info: {
+                    url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
+                    title: "Bobi and Me"
+                },
+                style: {
+                    backgroundColor: "#4b2b2b13"
+                }
+            },
+            {
                 id: "n104",
                 type: "note-todos",
                 isPinned: false,
@@ -120,6 +159,35 @@ function _createNotes() {
                         { txt: "headphones", doneAt: null },
                         { txt: "t-shirt", doneAt: null }
                     ]
+                },
+                style: {
+                    backgroundColor: "#4b2b2b13"
+                }
+            },
+            {
+                id: "n108",
+                type: "note-todos",
+                isPinned: false,
+                info: {
+                    label: "Shopping",
+                    todos: [
+                        { txt: "bag", doneAt: null },
+                        { txt: "pencil", doneAt: 187111111 },
+                        { txt: "pen", doneAt: null },
+                        { txt: "pokemon ball", doneAt: null }
+                    ]
+                },
+                style: {
+                    backgroundColor: "#4b2b2b13"
+                }
+            },
+            {
+                id: "n110",
+                type: "note-video",
+                isPinned: false,
+                info: {
+                    url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                    title: "Bobi and Me"
                 },
                 style: {
                     backgroundColor: "#4b2b2b13"
