@@ -48,11 +48,9 @@ export default {
             this.filterBy = filterBy
         },
         newEmailRender(val) {
-            console.log(val);
             this.isNewEmail = true;
         },
         reply(from) {
-            console.log(from);
             this.isNewEmail = true;
             this.from = from
         },
@@ -74,7 +72,6 @@ export default {
                 })
         },
         removed(emailId){
-            console.log(emailId);
            const idx =  this.emails.findIndex(email => email.id === emailId)
            this.emails.splice(idx,1)
         },
@@ -83,24 +80,30 @@ export default {
         this.emails.splice(idx,1)
       },
       loadEmail() {
-        console.log("loading");
-        console.log(this.$route.params.obj);
         const email = JSON.parse(this.$route.params.obj);
-        console.log(email);
         switch(email.type) {
             case 'text':
-                var newEmail ={body:email.text}
+                if(email.text.includes(':')){
+                    var idxDots=email.text.split('').findIndex((letter) => letter === ':')
+                    var emailSubject=email.text.substring(0,idxDots)
+                    var emailBody=email.text.substring(idxDots+1,email.text.length)
+                    var newEmail ={body:emailBody,subject:emailSubject}
+                }
+                else var newEmail ={body:email.text}
               break;
             case 'todos':
-                var newEmail ={subject:email.text,body:email.todos.txt} 
+                var todoList='todos : '
+                for(var i=0;i<email.todos.length;i++){
+                    if(i===email.todos.length-1) todoList+=email.todos[i].txt+'.'
+                    else todoList+=email.todos[i].txt+', '
+                }
+                var newEmail ={subject:email.text,body:todoList} 
               break;
               case 'imgVideo':
-                var newEmail ={subject:email.text,body:email.url} 
+                var newEmail ={subject:email.text,body:email.url.replaceAll('*','/')} 
                 break;
           }
-          
           this.noteEmail=newEmail
-          console.log(`this.noteEmail = `, this.noteEmail)
     },
     },
 
@@ -110,7 +113,6 @@ export default {
             return this.emails.filter(email => (regex.test(email.subject) || regex.test(email.from) || regex.test(email.body)))
         },
         getnoteEmail(){
-            console.log(`foo = `, this.noteEmail)
             return this.noteEmail
         }
     },

@@ -58,20 +58,19 @@ export default {
                     break;
                 case 'note-todos':
                     var text = this.note.info.label
-                    console.log(`text = `, text)
                     var todos = this.note.info.todos
                     var note = { text, todos, type: 'todos' }
                     break;
                 case 'note-video':
+                    var newUrl=this.note.info.url.replaceAll('/', '*')
                     var text = this.note.info.title
-                    var url = this.note.info.url.substring(7,this.note.info.url.length)
-                    console.log(`text = `, url)
+                    var url = newUrl
                     var note = { text, url, type: 'imgVideo' }
                     break;
                 case 'note-img':
                     var text = this.note.info.title
-                    var url = this.note.info.url.substring(7,this.note.info.url.length)
-                    console.log(`text = `, url)
+                    var newUrl=this.note.info.url.replaceAll('/', '*')
+                    var url = newUrl
                     var note = { text, url, type: 'imgVideo' }
                     break;
                     // this.note.info.url.substring(7,this.note.info.url.length)

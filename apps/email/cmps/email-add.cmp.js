@@ -49,19 +49,17 @@ export default {
         }
     },
     created() {
-        // console.log(this.from);
         if (this.noteEmail) {
             if(this.noteEmail.subject)this.writtenEmail.subject = this.noteEmail.subject
             this.writtenEmail.body = this.noteEmail.body
+            this.$router.push('/emailApp')
         }
 
     },
     methods: {
         sendEmail() {
-            console.log(this.from);
             if (this.from) this.writtenEmail.to = this.from
             emailService.save(this.writtenEmail)
-            console.log(this.writtenEmail);
             this.$emit('closeMsg')
         },
         openEmojis() {

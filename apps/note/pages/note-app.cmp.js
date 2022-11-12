@@ -84,10 +84,7 @@ export default {
             this.filterBy = filterBy
         },
         loadNote() {
-            console.log("loading");
-            console.log(this.$route.params.obj);
             const note = JSON.parse(this.$route.params.obj);
-            console.log(note);
             const newNote = { type: 'note-txt',  style: {
                 backgroundColor: "#4b2b2b13"
             }, isPinned: false, info: {txt:`${note.subject} : ${note.body}`}}
