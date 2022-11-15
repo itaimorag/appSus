@@ -15,7 +15,6 @@ export default {
         <p class="body">{{ substringBody }}</p>
         <div v-if="email.isHovered && !email.isRead"  @click.stop="changeIsRead(email, true)"><i class="fa fa-envelope-o"></i></div>
         <div v-if="email.isHovered && email.isRead"  @click.stop="changeIsRead(email, false)"><i class="fa fa-envelope-open-o"></i></div>
-        <div v-if="email.isHovered" @click.stop="draftEmail(email, true)"><i class="fa fa-archive"></i></div>
         <div v-if="email.isHovered" @click.stop="trashEmail(email)"><i class="fa fa-trash"></i></div>
         <p class="date" v-if="!email.isHovered">{{formattedSentAt}}</p>
     </section>
@@ -35,16 +34,11 @@ export default {
         mouseOver(email, val){
             email.isHovered = val
         },
-        draftEmail(email, val) {
-            email.isDraft = val
-            emailService.save(email)
-            showSuccessMsg('Email sent to draft')
-            this.$emit('drafted', email.id)
-        },
         emailSelect(email) {
             email.isRead = true
             if(email.isDraft && email.status !== 'trash'){
                 this.$emit('openDraft', email)
+                return
             }
             this.selectedEmail = email
             this.isEmailOpen = !this.isEmailOpen

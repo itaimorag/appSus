@@ -45,18 +45,19 @@ export default {
     },
     methods: {
         openDraft(email){
-            this.isNewEmail = true;
+            this.isNewEmail = true
             this.noteEmail = email
-            console.log(email);
+            console.log(email)
+            console.log(this.noteEmail)
         },
         setFilter(filterBy) {
             this.filterBy = filterBy
         },
         newEmailRender(val) {
-            this.isNewEmail = true;
+            this.isNewEmail = true
         },
         reply(from) {
-            this.isNewEmail = true;
+            this.isNewEmail = true
             this.from = from
         },
         closeEmail() {

@@ -11,6 +11,7 @@
 
 .email-list ul{
     padding: 0;
+    margin-bottom: 10vh;
 }
 
 @media (min-width:600px){

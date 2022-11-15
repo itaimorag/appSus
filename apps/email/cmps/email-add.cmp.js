@@ -33,7 +33,7 @@ export default {
             </label>
                 <button @click="sendEmail"><i class="fa fa-send send-btn" style="font-size:24px"></i></button>
             </div>
-                <button class="close-btn" @click="$emit('closeMsg')">X</button>
+                <button class="close-btn" @click="closeMsg">X</button>
 
         </section>
     `,
@@ -68,6 +68,22 @@ export default {
             const button = document.querySelector('.emoji-button');
             const picker = new EmojiButton()
             picker.togglePicker(button)
+        },
+        closeMsg() {
+            if (this.writtenEmail.to || this.writtenEmail.subject || this.writtenEmail.body) {
+                this.writtenEmail.isDraft = true
+                emailService.save(this.writtenEmail)
+                showSuccessMsg('Your email was drafted')
+                this.writtenEmail= {
+                    to: '',
+                    subject: '',
+                    body: '',
+                    from: "user@appsus.com",
+                    sentAt: Date.now(),
+                    isRead: false
+                }
+            }
+            this.$emit('closeMsg')
         }
 
     },
