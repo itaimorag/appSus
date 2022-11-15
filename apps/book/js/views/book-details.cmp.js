@@ -20,11 +20,11 @@ export default {
                     <router-link class="back-link" to="/bookApp">Back</router-link>
                     <button class="add-review-btn" @click="isReview = true">Add⭐</button>
                     <button v-if="book.reviews.length > 0" class="watch-review-btn" @click="renderReviews = true">Watch⭐</button>
+                    <router-link class="prev-book-btn" :to="'/bookApp/' + neighBooks.prevId">Prev book</router-link>
+                    <router-link class="next-book-btn" :to="'/bookApp/' + neighBooks.nextId">Next book</router-link>
                 </div>
                 <review-add  @close="closed" v-if="isReview"  @review="saveReview"></review-add>
             </div>
-            <router-link :to="'/bookApp/' + neighBooks.nextId">Next book</router-link>
-            <router-link :to="'/bookApp/' + neighBooks.prevId">Prev book</router-link>
             <review-list @backed="closed" :reviews="book.reviews" v-if="renderReviews" />
         </section>
     `,
