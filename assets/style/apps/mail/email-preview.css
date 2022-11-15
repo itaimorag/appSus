@@ -27,7 +27,7 @@
 }
 
 .email-preview .body{
-width: 42%;
+    width: 15%;
 }
 
 .email-preview .bold{
@@ -45,4 +45,10 @@ width: 42%;
 
 .email-preview .fa-envelope-o, .fa-envelope-open-o, .fa-trash{
     margin: 8px;
+}
+
+@media (min-width:600px){
+    .email-preview .body{
+        width: 42%;
+    }
 }

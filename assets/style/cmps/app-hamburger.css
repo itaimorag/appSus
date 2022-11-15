@@ -1,14 +1,16 @@
 .app-hamburger {
     display: grid;
-    grid-template-columns: auto auto auto;
-    /* width: 200px; */
-    height: 200px;
+    grid-template-columns: auto;
     position: absolute;
     top: 10vh;
     right: 0px;
     background-color: #ffffff;
-    padding: 10px;
+    color: #2f2f2f;
     border: 1px solid rgba(109, 109, 109, 0.27);
+}
+
+.app-hamburger img{
+    margin-inline: 5px;
 }
 
 .grid-item {

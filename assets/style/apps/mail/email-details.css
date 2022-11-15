@@ -4,6 +4,15 @@
    color: #181818;
    cursor: auto;
    background-color: #F2F6FC;
+   position: relative;
+}
+
+.btns{
+ width: 130px;
+ position: absolute;
+ top: 0;
+ right: 0;
+ margin-top: 20px;
 }
 
 .details-section h4{
@@ -35,8 +44,9 @@ max-width: 800px;
     text-align: right;
 }
 
-.details-section h1{
+.details-section h2{
     color: #181818;
+    max-width: 230px;
 }
 
 .details-section button , .details-section .button{
