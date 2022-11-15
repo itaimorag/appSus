@@ -45,7 +45,7 @@ function query(criteria) {
 
             switch (criteria.status) {
                 case 'inbox':
-                    return emails.filter(email => email.to === loggedinUser.email && email.status !== 'trash')
+                    return emails.filter(email => email.to === loggedinUser.email && email.status !== 'trash' && !email.isDraft)
 
                 case 'sent':
                     return emails.filter(email => email.from === loggedinUser.email && email.status !== 'trash')

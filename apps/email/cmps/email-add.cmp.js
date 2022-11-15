@@ -59,7 +59,6 @@ export default {
     },
     methods: {
         sendEmail() {
-            if (this.noteEmail.id) this.noteEmail.id = this.writtenEmail.id
             if (this.from) this.writtenEmail.to = this.from
             emailService.save(this.writtenEmail)
             showSuccessMsg('Your email was sent')
