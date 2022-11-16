@@ -36,11 +36,11 @@ nav a:hover {
     color: #2e2e2e;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
-.overflow-section{
+.overflow-section {
     overflow-y: scroll;
     height: 80vh;
 }
@@ -56,7 +56,7 @@ button{
 }
 
 .book-filter input {
-    width: 25%;
+    width: 50%;
     height: 30px;
     display: flex;
     align-items: center;
@@ -112,7 +112,6 @@ button{
 
 .book-details img {
     width: 70%;
-    margin: 30px;
 }
 
 
@@ -125,17 +124,18 @@ button{
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    margin: auto;
+    margin-inline: auto;
+    margin-top: 10px;
     inset: 0;
     width: 70%;
     text-align: center;
     font-size: 0.7em;
-    box-shadow: 0px 20px 22px 6px rgb(0 0 0 / 75%);
+    box-shadow: 5px 8px 20px 0px rgb(0 0 0 / 75%);
 }
 
 .book-details h1 {
     text-transform: capitalize;
-    font-size: 2rem;
+    font-size: 1.3rem;
     text-decoration: overline;
     font-weight: bolder;
 }
@@ -145,14 +145,14 @@ button{
     font-size: 25px;
 }
 
-.prev-book-btn{
+.prev-book-btn {
     position: absolute;
     bottom: 0;
     left: 0;
     margin: 15px;
 }
 
-.next-book-btn{
+.next-book-btn {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -167,12 +167,15 @@ button{
 .add-review-btn {
     position: absolute;
     right: 0;
-    margin-inline-end: 10px;
+    top: 0;
+    margin: 3px;
 }
 
-.watch-review-btn{
+.watch-review-btn {
     position: absolute;
     left: 0;
+    top: 0;
+    margin: 3px;
     margin-inline-start: 10px;
 }
 
@@ -182,7 +185,7 @@ button{
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .review-form {
@@ -200,16 +203,16 @@ button{
     box-shadow: 0px 20px 22px 6px rgb(0 0 0 / 75%);
 }
 
-.review-form label{
+.review-form label {
     display: flex;
     flex-direction: column;
 }
 
-.review-form .save-btn{
+.review-form .save-btn {
     width: fit-content;
 }
 
-.review-form select{
+.review-form select {
     width: fit-content;
 }
 
@@ -218,7 +221,7 @@ button{
     margin-inline: auto;
 }
 
-.review-form .exit-btn{
+.review-form .exit-btn {
     width: fit-content;
     position: absolute;
     top: 0;
@@ -233,13 +236,13 @@ button{
     
 } */
 
-.book-reviews{
+.book-reviews {
     min-height: 76vh;
     display: flex;
     flex-direction: column;
 }
 
-table{
+table {
     margin-top: 40px;
     width: 80%;
     margin-inline: auto;
@@ -248,28 +251,31 @@ table{
     border-collapse: collapse;
 }
 
-table, th, td{
-    border:  1px solid black;
+table,
+th,
+td {
+    border: 1px solid black;
 }
 
-table th, td{
+table th,
+td {
     padding: 10px;
 }
 
-table th{
+table th {
     text-decoration: underline;
     font-size: 20px;
 }
 
-.book-reviews button{
+.book-reviews button {
     margin-top: 40px;
     width: fit-content;
     margin-inline: auto;
 }
 
 
-.review-form .exit-btn:hover{
-    color:#990011FF;
+.review-form .exit-btn:hover {
+    color: #990011FF;
 }
 
 .delete-btn {
@@ -316,6 +322,7 @@ table th{
 @media (min-width:700px) {
     .book-details img {
         width: 240px;
+        margin: 30px;
     }
 
     header {
@@ -328,6 +335,24 @@ table th{
         width: 50%;
         margin-top: 20px;
     }
+
+    .book-details h1 {
+        font-size: 2rem;
+    }
+
+    .book-filter input {
+        width: 25%;
+    }
+
+    .add-review-btn{
+        right: 0;
+        margin: 30px;
+    }
+
+    .watch-review-btn{
+        left: 0;
+        margin: 30px;
+    }
 }
 
 @media (min-width:800px) {
@@ -336,27 +361,28 @@ table th{
     }
 }
 
-    @media (min-width:1200px) {
-        .book-details {
-            width: 40%;
-        }
-
-        .book-list ul {
-            gap: 40px;
-        }
-        .review-form {
-            width: 30%;
-        }
+@media (min-width:1200px) {
+    .book-details {
+        width: 40%;
     }
 
-    @media (min-width:1600px) {
-        .review-form {
-            width: 22%;
-        }
+    .book-list ul {
+        gap: 40px;
     }
 
-    @media (min-width:1800px) {
-        .book-list {
-            width: 60%;
-        }
+    .review-form {
+        width: 30%;
     }
+}
+
+@media (min-width:1600px) {
+    .review-form {
+        width: 22%;
+    }
+}
+
+@media (min-width:1800px) {
+    .book-list {
+        width: 60%;
+    }
+}

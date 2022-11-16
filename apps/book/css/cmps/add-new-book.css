@@ -1,22 +1,17 @@
 .add-new-book{
-    min-height: 76vh;
+    height: 78vh;
     display: flex;
 align-items: center;
 flex-direction: column;
 text-align: center;
+justify-content: center;
 width: 100%;
-}
-
-.add-component{
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-    width: 50%;
 }
 
 .add-new-book input{
     margin-inline: auto;
     margin-top: 30px;
-    width: 20vh;
+    width: 40vh;
 }
 
 
@@ -37,9 +32,12 @@ width: 100%;
     list-style-type: none;
 }
 
-.add-component ul{
-    padding: 0;
+.add-new-book ul{
+    overflow-y:scroll ;
+    padding-inline: 20px;
     margin-top: 20px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .add-book-btn{

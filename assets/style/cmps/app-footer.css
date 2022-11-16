@@ -8,3 +8,13 @@
     align-items: center;
     justify-content: center;
 }
+
+.app-footer p{
+    font-size: 12px;
+}
+
+@media (min-width:700px) {
+    .app-footer p{
+        font-size: 18px;
+    }
+}

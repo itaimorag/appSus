@@ -15,9 +15,9 @@ export default {
                     <p>Description: {{ book.description }}</p>
                     <h4>Page Count: -{{ book.pageCount }}-  {{ pageCount }}</h4>
                     <h3>{{publishCondition}}</h3>
-                    <h3 :class="priceColor">Price: {{priceFormat}}</h3>
+                    <h3 :class="priceColor">Price: {{priceFormat}}</h3> 
                     <img className="sale" v-if="book.listPrice.isOnSale" src="../../img/sale.png" alt="" />
-                    <router-link class="back-link" to="/bookApp">Back</router-link>
+                <router-link class="back-link" to="/bookApp">Back</router-link>
                     <button class="add-review-btn" @click="isReview = true">Add⭐</button>
                     <button v-if="book.reviews.length > 0" class="watch-review-btn" @click="renderReviews = true">Watch⭐</button>
                     <router-link class="prev-book-btn" :to="'/bookApp/' + neighBooks.prevId">Prev book</router-link>
