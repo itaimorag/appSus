@@ -5,7 +5,7 @@ export default{
         @input="filter"
         v-model="filterBy.title"
          type="text" 
-         placeholder=" &#xF002; Search a mail" />
+         placeholder=" 🔍 Search a mail" />
     </section>
     `,
         data() {
